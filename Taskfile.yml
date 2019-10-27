@@ -1,0 +1,32 @@
+version: "2"
+
+env:
+  KUBECONFIG:
+    sh: kind get kubeconfig-path
+
+tasks:
+  create-kind:
+    cmds:
+      - kind create cluster --config ci/bootstrap/kind.config.yaml
+      - kubectl apply -f ci/bootstrap/rbac.tiller.yml
+      - helm init --service-account tiller
+
+  delete-kind:
+    cmds:
+      - kind delete cluster
+      - docker system prune --all --volumes --force
+
+  forward:
+    cmds:
+      # - kubectl -n splunk-hec port-forward svc/splunk-hec 8000:8000
+      - kubectl -n nginx-ingress port-forward svc/nginx-ingress-controller 8000:8000
+
+  sync:
+    dir: ci
+    cmds:
+      - helmfile sync
+
+  template:
+    dir: ci
+    cmds:
+      - helmfile template

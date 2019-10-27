@@ -1,0 +1,24 @@
+helmDefaults:
+  kubeContext: kubernetes-admin@kind
+
+repositories:
+  - name: stable
+    url: https://kubernetes-charts.storage.googleapis.com
+
+releases:
+  - name: nginx-ingress
+    namespace: nginx-ingress
+    chart: stable/nginx-ingress
+    installed: true
+    version: ~1.x.x
+    values:
+      - config/nginx-ingress/values.yml
+
+  - name: splunk-hec
+    namespace: splunk-hec
+    chart: ../charts/splunk
+    installed: true
+    recreatePods: true
+    force: false
+    values:
+      - config/splunk-hec/values.yml

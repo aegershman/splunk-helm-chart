@@ -1,0 +1,8 @@
+controller:
+  replicaCount: 1
+  hostNetwork: true
+  service:
+    type: NodePort
+
+tcp:
+  8000: "splunk-hec/splunk-hec:8000"
