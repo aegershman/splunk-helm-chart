@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: {{ include "splunk.fullname" . }}
   labels:
-    app: {{ template "splunk.name" . }}
-    chart: {{ template "splunk.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "splunk.labels" . | indent 4 }}
   annotations:
     {{- range $key, $value := .Values.web.service.annotations }}
     {{ $key }}: {{ $value | quote }}
