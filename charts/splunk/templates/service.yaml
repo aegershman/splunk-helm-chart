@@ -23,7 +23,6 @@ spec:
     - port: 5514
       targetPort: 5514
       name: pas-syslog
-
   selector:
-    app: {{ template "splunk.name" . }}
-    release: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "splunk.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
