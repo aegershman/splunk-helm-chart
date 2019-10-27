@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.4.0]
+
+* use contemporary helm chart metadata prefixes
+* backwards incompatible
+
 ## [0.3.0]
 
 * configurable `ingress` for the `web`, definitely work in progress

@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "splunk.fullname" . }}
+  name: {{ include "splunk.fullname" . }}
   labels:
-    app: {{ template "splunk.name" . }}
-    chart: {{ template "splunk.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "splunk.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "splunk.name" . }}
-      release: {{ .Release.Name }}
+      app.kubernetes.io/name: {{ include "splunk.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "splunk.name" . }}
-        release: {{ .Release.Name }}
+        app.kubernetes.io/name: {{ include "splunk.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
     {{- if .Values.web.deployment.affinity }}
       affinity:
