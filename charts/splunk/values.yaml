@@ -9,6 +9,25 @@ globalToken: 00000000-0000-0000-0000-000000000000
 
 adminPassword: changemePlease
 
+## TODO basically broken, only supports web UI
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
 conf:
   ## You can include any kind of *.conf file when overriding
   # indexes.conf: |
