@@ -9,6 +9,11 @@ globalToken: 00000000-0000-0000-0000-000000000000
 
 adminPassword: changemePlease
 
+## TODO basically broken, only supports web UI
+service:
+  type: ClusterIP
+  port: 8000
+
 ingress:
   enabled: false
   annotations: {}
