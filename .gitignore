@@ -1,0 +1,7 @@
+*.project
+*.DS_Store
+credentials.yml
+scratchpad/
+helm
+*.iml
+.idea/**
