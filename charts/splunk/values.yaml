@@ -1,0 +1,49 @@
+image:
+  repository: splunk/splunk
+  tag: 7.0.3-monitor
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+globalToken: 00000000-0000-0000-0000-000000000000
+
+adminPassword: changemePlease
+
+conf:
+  ## You can include any kind of *.conf file when overriding
+  # indexes.conf: |
+  #   [exampleIndex]
+  #   homePath = $SPLUNK_DB/exampleIndex/db
+  #   coldPath = $SPLUNK_DB/exampleIndex/colddb
+  #   thawedPath = $SPLUNK_DB/exampleIndex/thaweddb
+  # outputs.conf: |
+  #   [some-example]
+  #   example one two three
+
+web:
+  service:
+    ## Annotations for the web service. Example:
+    ##
+    ## annotations:
+    ##   service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    ##   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+    ##   service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "sandbox-infra-subnet"
+    ##
+    annotations: {}
+
+  deployment:
+    ## Affinity and anti-affinity on web deployment.
+    ## By default, this will best-effort schedule the pods on different hosts
+    ##
+    affinity: # {}
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - splunk
+            topologyKey: "kubernetes.io/hostname"

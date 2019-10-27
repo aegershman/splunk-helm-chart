@@ -1,0 +1,46 @@
+[]
+access = read : [ * ], write : [ admin, power ]
+
+[transforms/rfc5424_header]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[transforms/rfc5424_host]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[transforms/facility_lookup]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[transforms/rfc5424_kv_pairs]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[transforms/rfc5424_sdata]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[transforms/rfc5424_sdid]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[props/rfc5424_syslog/REPORT-rfc5424_data]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[transforms/severity_lookup]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[macros/convert_facility_severity]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[lookups/lookup_facility.csv]
+access = read : [ * ], write : [ admin, power ]
+export = system
+
+[lookups/lookup_severity.csv]
+access = read : [ * ], write : [ admin, power ]
+export = system

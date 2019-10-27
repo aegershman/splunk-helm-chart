@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "splunk.fullname" . }}
+  labels:
+    app: {{ template "splunk.name" . }}
+    chart: {{ template "splunk.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    {{- range $key, $value := .Values.web.service.annotations }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8000
+      targetPort: 8000
+      name: splunkweb
+    - port: 9997
+      targetPort: 9997
+      name: splunkfwd
+    - port: 8088
+      targetPort: 8088
+      name: splunkhec
+    - port: 5514
+      targetPort: 5514
+      name: pas-syslog
+
+  selector:
+    app: {{ template "splunk.name" . }}
+    release: {{ .Release.Name }}

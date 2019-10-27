@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "splunk.fullname" . }}
+  labels:
+    app: {{ template "splunk.name" . }}
+    chart: {{ template "splunk.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "splunk.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "splunk.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+    {{- if .Values.web.deployment.affinity }}
+      affinity:
+{{ toYaml .Values.web.deployment.affinity | indent 8 }}
+    {{- end }}
+      volumes:
+      - name: conf
+        configMap:
+          name: conf
+      - name: httpinput
+        configMap:
+          name: httpinput
+      # I hate having to do this so much, you really don't understand...
+      - name: rfc5424-default
+        configMap:
+          name: rfc5424-default
+      - name: rfc5424-local
+        configMap:
+          name: rfc5424-local
+      - name: rfc5424-lookups
+        configMap:
+          name: rfc5424-lookups
+      - name: rfc5424-metadata
+        configMap:
+          name: rfc5424-metadata
+
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          volumeMounts:
+          - name: conf
+            mountPath: /var/opt/splunk/etc/system/local
+          - name: httpinput
+            mountPath: /var/opt/splunk/etc/apps/splunk_httpinput/local
+          # Same thing: hate having to do this, but it's better than nothing
+          - name: rfc5424-default
+            mountPath: /var/opt/splunk/etc/apps/rfc5424/default
+          - name: rfc5424-local
+            mountPath: /var/opt/splunk/etc/apps/rfc5424/local
+          - name: rfc5424-lookups
+            mountPath: /var/opt/splunk/etc/apps/rfc5424/lookups
+          - name: rfc5424-metadata
+            mountPath: /var/opt/splunk/etc/apps/rfc5424/metadata
+
+          ports:
+          - name: splunkweb
+            containerPort: 8000
+          - name: splunkfwd
+            containerPort: 9997
+          - name: splunkhec
+            containerPort: 8088
+          - name: pas-syslog
+            containerPort: 5514
+
+          env:
+          - name: SPLUNK_START_ARGS
+            value: --accept-license
+          - name: SPLUNK_CMD
+            value: 'edit user admin -password {{ .Values.adminPassword }} -role admin -auth admin:changeme'
