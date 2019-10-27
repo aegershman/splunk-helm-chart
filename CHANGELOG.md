@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.2.1]
+
+* sync `.helmignore` and `_helpers` with what a new chart would use
+
 ## [0.2.0]
 
 * `annotations` configurable for web service
