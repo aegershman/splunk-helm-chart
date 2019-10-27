@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.3.0]
+
+* configurable `ingress` for the `web`, definitely work in progress
+
 ## [0.2.1]
 
 * sync `.helmignore` and `_helpers` with what a new chart would use
