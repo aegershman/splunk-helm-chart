@@ -1,8 +1,8 @@
 replicaCount: 1
 
-globalToken: b51a8063-8316-4433-8963-a9af78afce17
+globalToken: b51a8063-8316-4433-8963-a9af78afce17 # uuidgen
 
-adminPassword: e9f630105cd740e3b0d81439ef821973
+adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
 
 service: # TODO broke
   port: 8000 # TODO broke

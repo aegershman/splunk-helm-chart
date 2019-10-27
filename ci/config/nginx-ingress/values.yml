@@ -5,4 +5,4 @@ controller:
     type: NodePort
 
 tcp:
-  8000: "splunk-hec/splunk-hec:8000"
+  8000: "splunk/splunk:8000"

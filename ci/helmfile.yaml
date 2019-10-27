@@ -14,11 +14,11 @@ releases:
     values:
       - config/nginx-ingress/values.yml
 
-  - name: splunk-hec
-    namespace: splunk-hec
+  - name: splunk
+    namespace: splunk
     chart: ../charts/splunk
     installed: true
     recreatePods: true
     force: false
     values:
-      - config/splunk-hec/values.yml
+      - config/splunk/values.yml
