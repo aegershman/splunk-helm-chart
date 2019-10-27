@@ -1,0 +1,59 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: conf
+data:
+{{- range $key, $value := .Values.conf }}
+{{ $key | indent 2 }}: |
+{{ $value | indent 4 }}
+{{- end }}
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: httpinput
+data:
+  inputs.conf: |
+    [http://global]
+    token = {{ .Values.globalToken }}
+
+---
+
+# Now we'll create a bunch of configMaps for all the individual
+# folders which makeup a splunk app... which sucks.
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: rfc5424-default
+data:
+{{ (.Files.Glob "splunk-apps/rfc5424/default/*").AsConfig | indent 2 }}
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: rfc5424-local
+data:
+{{ (.Files.Glob "splunk-apps/rfc5424/local/*").AsConfig | indent 2 }}
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: rfc5424-lookups
+data:
+{{ (.Files.Glob "splunk-apps/rfc5424/lookups/*").AsConfig | indent 2 }}
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: rfc5424-metadata
+data:
+{{ (.Files.Glob "splunk-apps/rfc5424/metadata/*").AsConfig | indent 2 }}
