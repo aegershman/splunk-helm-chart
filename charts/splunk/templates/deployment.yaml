@@ -8,13 +8,13 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "splunk.name" . }}
-      release: {{ .Release.Name }}
+      app.kubernetes.io/name: {{ include "splunk.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "splunk.name" . }}
-        release: {{ .Release.Name }}
+        app.kubernetes.io/name: {{ include "splunk.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
     {{- if .Values.web.deployment.affinity }}
       affinity:
