@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.5.0]
+
+* adds serviceAccount option
+
 ## [0.4.3]
 
 * adds nameOverride and fullnameOverride

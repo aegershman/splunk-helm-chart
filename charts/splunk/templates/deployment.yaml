@@ -20,6 +20,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+      serviceAccountName: {{ template "splunk.serviceAccountName" . }}
     {{- with .Values.web.deployment.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
