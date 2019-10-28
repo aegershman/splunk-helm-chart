@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.6.0]
+
+* adds security context options
+* adds podSecurityContext options
+
 ## [0.5.0]
 
 * adds serviceAccount option
