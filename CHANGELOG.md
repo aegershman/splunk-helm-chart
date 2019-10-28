@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.4.3]
+
+* introduce image pull secrets
+* use `with` instead of `if`
+
 ## [0.4.2]
 
 * introduce image pull secrets
