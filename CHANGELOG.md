@@ -4,8 +4,8 @@ This is a crummy changelog. Sue me.
 
 ## [0.4.3]
 
-* introduce image pull secrets
-* use `with` instead of `if`
+* adds nameOverride and fullnameOverride
+* puts replicaCount at top of values because that's how default chart does it
 
 ## [0.4.2]
 
