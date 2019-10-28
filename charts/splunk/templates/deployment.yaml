@@ -16,6 +16,10 @@ spec:
         app.kubernetes.io/name: {{ include "splunk.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
     {{- if .Values.web.deployment.affinity }}
       affinity:
 {{ toYaml .Values.web.deployment.affinity | indent 8 }}

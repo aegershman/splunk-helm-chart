@@ -2,6 +2,15 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.4.2]
+
+* introduce image pull secrets
+* use `with` instead of `if`
+
+## [0.4.1]
+
+* fix chart description
+
 ## [0.4.0]
 
 * use contemporary helm chart metadata prefixes

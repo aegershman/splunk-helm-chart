@@ -3,6 +3,8 @@ image:
   tag: 7.0.3-monitor
   pullPolicy: IfNotPresent
 
+imagePullSecrets: []
+
 replicaCount: 3
 
 globalToken: 00000000-0000-0000-0000-000000000000
