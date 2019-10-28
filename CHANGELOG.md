@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.4.3]
+
+* adds nameOverride and fullnameOverride
+* puts replicaCount at top of values because that's how default chart does it
+
 ## [0.4.2]
 
 * introduce image pull secrets
