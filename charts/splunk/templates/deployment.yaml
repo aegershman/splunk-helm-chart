@@ -20,9 +20,9 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-    {{- if .Values.web.deployment.affinity }}
+    {{- with .Values.web.deployment.affinity }}
       affinity:
-{{ toYaml .Values.web.deployment.affinity | indent 8 }}
+        {{- toYaml . | nindent 8 }}
     {{- end }}
       volumes:
       - name: conf
