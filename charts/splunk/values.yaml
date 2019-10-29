@@ -50,6 +50,22 @@ nodeSelector: {}
 
 tolerations: []
 
+## Affinity and anti-affinity on web deployment.
+## By default, this will best-effort schedule the pods on different hosts
+##
+affinity: # {}
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - splunk
+          topologyKey: "kubernetes.io/hostname"
+
 globalToken: 00000000-0000-0000-0000-000000000000
 
 adminPassword: changemePlease
@@ -75,20 +91,3 @@ web:
     ##   service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "sandbox-infra-subnet"
     ##
     annotations: {}
-
-  deployment:
-    ## Affinity and anti-affinity on web deployment.
-    ## By default, this will best-effort schedule the pods on different hosts
-    ##
-    affinity: # {}
-      podAntiAffinity:
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - splunk
-              topologyKey: "kubernetes.io/hostname"
