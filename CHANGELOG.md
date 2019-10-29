@@ -2,6 +2,12 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.7.0]
+
+* adds resource config
+* adds tolerations
+* adds nodeselector
+
 ## [0.6.1]
 
 * cosmetic, moves params and values around

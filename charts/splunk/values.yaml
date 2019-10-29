@@ -46,6 +46,8 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+nodeSelector: {}
+
 globalToken: 00000000-0000-0000-0000-000000000000
 
 adminPassword: changemePlease

@@ -77,6 +77,10 @@ spec:
         - name: rfc5424-metadata
           configMap:
             name: rfc5424-metadata
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     {{- with .Values.web.deployment.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
