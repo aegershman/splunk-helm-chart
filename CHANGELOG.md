@@ -8,7 +8,7 @@ This is a crummy changelog. Sue me.
 * use named ports
 * ports are configurable now
 * rename pas-syslog to syslog
-* local testing exposes all these endpoints
+* local testing exposes endpoints
 
 ## [0.7.3]
 
