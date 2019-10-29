@@ -20,9 +20,9 @@ spec:
     - port: {{ .Values.service.hecBindPort }}
       targetPort: hec
       name: hec
-    - port: 5514
-      targetPort: pas-syslog
-      name: pas-syslog
+    - port: {{ .Values.service.syslogBindPort }}
+      targetPort: syslog
+      name: syslog
   selector:
     app.kubernetes.io/name: {{ include "splunk.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
