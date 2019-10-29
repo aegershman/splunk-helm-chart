@@ -33,7 +33,6 @@ service:
   s2sBindPort: 9997
   hecBindPort: 8088
   syslogBindPort: 5514
-  ## Annotations for the web service. Example:
   ##
   ## annotations:
   ##   service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
