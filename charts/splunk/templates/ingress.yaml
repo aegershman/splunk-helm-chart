@@ -1,6 +1,5 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "splunk.fullname" . -}}
-{{- $svcPort := .Values.service.httpBindPort -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
@@ -28,14 +27,34 @@ spec:
 {{- end }}
   rules:
   {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
+    - host: {{ . | quote }}
       http:
         paths:
-        {{- range .paths }}
-          - path: {{ . }}
+          - path: /
             backend:
               serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-        {{- end }}
+              servicePort: {{ $.Values.service.httpBindPort }}
+          ## TODO
+          ## HEC pathways
+          ## better way to configure these...?
+          ## Still don't fully understand why splunk has them under different port routes
+          ## https://docs.splunk.com/Documentation/SplunkCloud/7.2.7/Data/Senddata
+          ##
+          ## Generally we assume Ingress is handling TLS termination, so TLS should
+          ## be disabled on HEC... Or I guess you could do TLS passthrough if you
+          ## wanted to configure the certs on the splunk server directly
+          ## you do you, you know?
+          - path: /services/collector
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ $.Values.service.hecBindPort }}
+          - path: /services/collector/event
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ $.Values.service.hecBindPort }}
+          - path: /services/collector/raw
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ $.Values.service.hecBindPort }}
   {{- end }}
 {{- end }}

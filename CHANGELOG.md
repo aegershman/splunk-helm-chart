@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.10.0]
+
+* ingress handles both `web` and `hec`
+* still lots of work to do on this
+
 ## [0.9.0]
 
 * move `web.service.annotations` under `service.annoations`
