@@ -30,14 +30,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: splunkweb
-              containerPort: 8000
-            - name: splunkfwd
-              containerPort: 9997
-            - name: splunkhec
-              containerPort: 8088
-            - name: pas-syslog
-              containerPort: 5514
+            - name: http
+              containerPort: {{ .Values.service.httpBindPort }}
+            - name: s2s
+              containerPort: {{ .Values.service.s2sBindPort }}
+            - name: hec
+              containerPort: {{ .Values.service.hecBindPort }}
+            - name: syslog
+              containerPort: {{ .Values.service.syslogBindPort }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

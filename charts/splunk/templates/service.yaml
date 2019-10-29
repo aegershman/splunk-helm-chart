@@ -11,18 +11,18 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: 8000
-      targetPort: 8000
-      name: splunkweb
-    - port: 9997
-      targetPort: 9997
-      name: splunkfwd
-    - port: 8088
-      targetPort: 8088
-      name: splunkhec
-    - port: 5514
-      targetPort: 5514
-      name: pas-syslog
+    - port: {{ .Values.service.httpBindPort }}
+      targetPort: http
+      name: http
+    - port: {{ .Values.service.s2sBindPort }}
+      targetPort: s2s
+      name: s2s
+    - port: {{ .Values.service.hecBindPort }}
+      targetPort: hec
+      name: hec
+    - port: {{ .Values.service.syslogBindPort }}
+      targetPort: syslog
+      name: syslog
   selector:
     app.kubernetes.io/name: {{ include "splunk.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
