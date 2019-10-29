@@ -4,6 +4,10 @@ globalToken: b51a8063-8316-4433-8963-a9af78afce17 # uuidgen
 
 adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
 
+# turn off splunk HEC's SSL requirement since
+# we're doing TLS termination at the ingress
+enableSSL: 0
+
 ingress:
   enabled: true
   hosts:

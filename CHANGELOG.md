@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.10.1]
+
+* configurable global HEC TLS option
+
 ## [0.10.0]
 
 * ingress handles both `web` and `hec`
