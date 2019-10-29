@@ -29,6 +29,15 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+          - name: splunkweb
+            containerPort: 8000
+          - name: splunkfwd
+            containerPort: 9997
+          - name: splunkhec
+            containerPort: 8088
+          - name: pas-syslog
+            containerPort: 5514
 
           volumeMounts:
           - name: conf
@@ -44,16 +53,6 @@ spec:
             mountPath: /var/opt/splunk/etc/apps/rfc5424/lookups
           - name: rfc5424-metadata
             mountPath: /var/opt/splunk/etc/apps/rfc5424/metadata
-
-          ports:
-          - name: splunkweb
-            containerPort: 8000
-          - name: splunkfwd
-            containerPort: 9997
-          - name: splunkhec
-            containerPort: 8088
-          - name: pas-syslog
-            containerPort: 5514
 
           env:
           - name: SPLUNK_START_ARGS
