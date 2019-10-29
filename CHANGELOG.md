@@ -10,6 +10,7 @@ This is a crummy changelog. Sue me.
 * rename pas-syslog to syslog
 * local testing exposes endpoints
 * local testing deactivates default backend
+* local testing deactivates http and https to save nodeports 80 and 443
 
 ## [0.7.3]
 

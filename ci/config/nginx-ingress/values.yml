@@ -3,6 +3,9 @@ controller:
   hostNetwork: true
   service:
     type: NodePort
+    ## deactivates to save some IPs
+    enableHttp: false
+    enableHttps: false
 
 defaultBackend:
   enabled: false
