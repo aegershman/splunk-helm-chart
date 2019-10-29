@@ -4,7 +4,7 @@ This is a crummy changelog. Sue me.
 
 ## [0.7.2]
 
-* adds a `test` template, but it doesn't do anything
+* adds default `test` template
 
 ## [0.7.1]
 
