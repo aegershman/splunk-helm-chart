@@ -23,10 +23,6 @@ spec:
       serviceAccountName: {{ template "splunk.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-    {{- with .Values.web.deployment.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
       volumes:
       - name: conf
         configMap:
@@ -85,3 +81,7 @@ spec:
             value: --accept-license
           - name: SPLUNK_CMD
             value: 'edit user admin -password {{ .Values.adminPassword }} -role admin -auth admin:changeme'
+    {{- with .Values.web.deployment.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
