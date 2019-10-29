@@ -34,6 +34,9 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $.Values.service.httpBindPort }}
+        ## TODO perhaps make whether or not the HEC is active configurable?
+        ## that way maybe we could separate them and be able to turn off
+        ## the web UI
         {{- range $.Values.ingress.hec.paths }}
           - path: {{ . }}
             backend:
