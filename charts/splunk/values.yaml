@@ -77,9 +77,11 @@ ingress:
   #      - splunk.127.0.0.1.xip.io
 
   ##
-  ## There's probably no reason to change these
-  ## See also:
   ## https://docs.splunk.com/Documentation/Splunk/7.3.2/Data/HECRESTendpoints
+  ##
+  ## There's probably no reason to change these, but if you want
+  ## to add more paths, in your values.yaml you'll likely need to include
+  ## the paths defined in this default
   ##
   hec:
     paths:

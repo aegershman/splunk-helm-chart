@@ -6,6 +6,7 @@ This is a crummy changelog. Sue me.
 
 * ingress handles both `web` and `hec`
 * still lots of work to do on this
+* local example ingress now uses https
 
 ## [0.9.0]
 

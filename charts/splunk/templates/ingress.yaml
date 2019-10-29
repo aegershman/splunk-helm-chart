@@ -34,17 +34,11 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $.Values.service.httpBindPort }}
-          - path: /services/collector
+        {{- range $.Values.ingress.hec.paths }}
+          - path: {{ . }}
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $.Values.service.hecBindPort }}
-          - path: /services/collector/event
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $.Values.service.hecBindPort }}
-          - path: /services/collector/raw
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $.Values.service.hecBindPort }}
+        {{- end }}
   {{- end }}
 {{- end }}
