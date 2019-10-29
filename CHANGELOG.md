@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.6.1]
+
+* cosmetic, moves params and values around
+
 ## [0.6.0]
 
 * adds security context options
