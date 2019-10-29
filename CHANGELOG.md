@@ -6,7 +6,7 @@ This is a crummy changelog. Sue me.
 
 * ingress handles both `web` and `hec`
 * still lots of work to do on this
-* local example ingress now uses https
+* local example ingress now forwards http (8080) and https (4443)
 
 ## [0.9.0]
 
