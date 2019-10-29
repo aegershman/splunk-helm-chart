@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.8.0]
+
+* ingress and svc improvements
+
 ## [0.7.3]
 
 * rm generated reference chart
