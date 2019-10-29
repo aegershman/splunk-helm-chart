@@ -11,7 +11,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: 8000
+    - port: {{ .Values.service.httpBindPort }}
       targetPort: http
       name: http
     - port: 9997
