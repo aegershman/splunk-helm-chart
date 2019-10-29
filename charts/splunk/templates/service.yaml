@@ -14,7 +14,7 @@ spec:
     - port: {{ .Values.service.httpBindPort }}
       targetPort: http
       name: http
-    - port: 9997
+    - port: {{ .Values.service.s2sBindPort }}
       targetPort: s2s
       name: s2s
     - port: 8088

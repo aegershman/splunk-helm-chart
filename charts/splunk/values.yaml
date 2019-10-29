@@ -30,6 +30,7 @@ securityContext: {}
 service:
   type: ClusterIP
   httpBindPort: 8000
+  s2sBindPort: 9997
 
 ingress:
   enabled: false

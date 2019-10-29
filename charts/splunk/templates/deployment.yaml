@@ -33,7 +33,7 @@ spec:
             - name: http
               containerPort: {{ .Values.service.httpBindPort }}
             - name: s2s
-              containerPort: 9997
+              containerPort: {{ .Values.service.s2sBindPort }}
             - name: hec
               containerPort: 8088
             - name: pas-syslog
