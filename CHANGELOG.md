@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.7.1]
+
+* add labels to configmaps
+
 ## [0.7.0]
 
 * adds resource config
