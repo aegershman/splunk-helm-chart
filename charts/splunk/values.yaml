@@ -33,6 +33,13 @@ service:
   s2sBindPort: 9997
   hecBindPort: 8088
   syslogBindPort: 5514
+  ##
+  ## annotations:
+  ##   service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+  ##   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+  ##   service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "sandbox-infra-subnet"
+  ##
+  annotations: {}
 
 ingress:
   enabled: false
@@ -90,14 +97,3 @@ conf:
   # outputs.conf: |
   #   [some-example]
   #   example one two three
-
-web:
-  service:
-    ## Annotations for the web service. Example:
-    ##
-    ## annotations:
-    ##   service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
-    ##   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-    ##   service.beta.kubernetes.io/azure-load-balancer-internal-subnet: "sandbox-infra-subnet"
-    ##
-    annotations: {}

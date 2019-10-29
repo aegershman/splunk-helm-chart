@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.9.0]
+
+* move `web.service.annotations` under `service.annoations`
+
 ## [0.8.0]
 
 * ingress and svc improvements

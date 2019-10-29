@@ -5,7 +5,7 @@ metadata:
   labels:
 {{ include "splunk.labels" . | indent 4 }}
   annotations:
-    {{- range $key, $value := .Values.web.service.annotations }}
+    {{- range $key, $value := .Values.service.annotations }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
 spec:
