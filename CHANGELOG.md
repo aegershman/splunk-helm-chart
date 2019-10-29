@@ -9,6 +9,7 @@ This is a crummy changelog. Sue me.
 * ports are configurable now
 * rename pas-syslog to syslog
 * local testing exposes endpoints
+* local testing deactivates default backend
 
 ## [0.7.3]
 
