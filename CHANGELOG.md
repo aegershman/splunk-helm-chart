@@ -11,6 +11,7 @@ This is a crummy changelog. Sue me.
 * local testing exposes endpoints
 * local testing deactivates default backend
 * local testing deactivates http and https to save nodeports 80 and 443
+* local testing forwards 8000 and 8088
 
 ## [0.7.3]
 
