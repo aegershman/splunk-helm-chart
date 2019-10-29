@@ -35,7 +35,7 @@ spec:
             - name: s2s
               containerPort: {{ .Values.service.s2sBindPort }}
             - name: hec
-              containerPort: 8088
+              containerPort: {{ .Values.service.hecBindPort }}
             - name: pas-syslog
               containerPort: 5514
           resources:

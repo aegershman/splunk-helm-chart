@@ -17,7 +17,7 @@ spec:
     - port: {{ .Values.service.s2sBindPort }}
       targetPort: s2s
       name: s2s
-    - port: 8088
+    - port: {{ .Values.service.hecBindPort }}
       targetPort: hec
       name: hec
     - port: 5514
