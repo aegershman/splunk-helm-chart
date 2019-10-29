@@ -27,10 +27,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-globalToken: 00000000-0000-0000-0000-000000000000
-
-adminPassword: changemePlease
-
 ## TODO basically broken, only supports web UI
 service:
   type: ClusterIP
@@ -49,6 +45,10 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+globalToken: 00000000-0000-0000-0000-000000000000
+
+adminPassword: changemePlease
 
 conf:
   ## You can include any kind of *.conf file when overriding
