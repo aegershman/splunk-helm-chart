@@ -5,6 +5,9 @@ This is a crummy changelog. Sue me.
 ## [0.8.0]
 
 * ingress and svc improvements
+* use named ports
+* ports are configurable now
+* rename pas-syslog to syslog
 
 ## [0.7.3]
 
