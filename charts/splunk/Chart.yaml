@@ -2,4 +2,4 @@ apiVersion: v1
 appVersion: 7.0.3
 description: splunk, but intended for use as an HTTP endpoint collector (HEC)
 name: splunk
-version: 0.8.0
+version: 0.7.1
