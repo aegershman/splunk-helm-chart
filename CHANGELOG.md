@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.7.3]
+
+* rm generated reference chart
+
 ## [0.7.2]
 
 * adds default `test` template
