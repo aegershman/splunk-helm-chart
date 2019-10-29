@@ -30,11 +30,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: splunkweb
+            - name: http
               containerPort: 8000
-            - name: splunkfwd
+            - name: s2s
               containerPort: 9997
-            - name: splunkhec
+            - name: hec
               containerPort: 8088
             - name: pas-syslog
               containerPort: 5514

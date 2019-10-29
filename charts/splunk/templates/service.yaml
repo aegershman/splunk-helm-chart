@@ -13,13 +13,13 @@ spec:
   ports:
     - port: 8000
       targetPort: 8000
-      name: splunkweb
+      name: http
     - port: 9997
       targetPort: 9997
-      name: splunkfwd
+      name: s2s
     - port: 8088
       targetPort: 8088
-      name: splunkhec
+      name: hec
     - port: 5514
       targetPort: 5514
       name: pas-syslog
