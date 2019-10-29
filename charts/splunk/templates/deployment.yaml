@@ -38,6 +38,8 @@ spec:
               containerPort: 8088
             - name: pas-syslog
               containerPort: 5514
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: conf
               mountPath: /var/opt/splunk/etc/system/local
