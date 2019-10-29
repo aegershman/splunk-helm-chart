@@ -2,6 +2,8 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: conf
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
 data:
 {{- range $key, $value := .Values.conf }}
 {{ $key | indent 2 }}: |
@@ -14,6 +16,8 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: httpinput
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
 data:
   inputs.conf: |
     [http://global]
@@ -28,6 +32,8 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: rfc5424-default
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
 data:
 {{ (.Files.Glob "splunk-apps/rfc5424/default/*").AsConfig | indent 2 }}
 
@@ -37,6 +43,8 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: rfc5424-local
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
 data:
 {{ (.Files.Glob "splunk-apps/rfc5424/local/*").AsConfig | indent 2 }}
 
@@ -46,6 +54,8 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: rfc5424-lookups
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
 data:
 {{ (.Files.Glob "splunk-apps/rfc5424/lookups/*").AsConfig | indent 2 }}
 
@@ -55,5 +65,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: rfc5424-metadata
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
 data:
 {{ (.Files.Glob "splunk-apps/rfc5424/metadata/*").AsConfig | indent 2 }}
