@@ -5,11 +5,11 @@ controller:
     type: NodePort
     ## deactivate to save some ports
     enableHttp: true
-    enableHttps: false
+    enableHttps: true
 
 defaultBackend:
   enabled: false
 
 tcp:
   9997: "splunk/splunk:9997"
-  # 5514: "splunk/splunk:5514"
+  5514: "splunk/splunk:5514"
