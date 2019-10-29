@@ -38,6 +38,8 @@ spec:
               containerPort: 8088
             - name: pas-syslog
               containerPort: 5514
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: conf
               mountPath: /var/opt/splunk/etc/system/local
@@ -77,7 +79,15 @@ spec:
         - name: rfc5424-metadata
           configMap:
             name: rfc5424-metadata
-    {{- with .Values.web.deployment.affinity }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
       affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
