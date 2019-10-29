@@ -23,27 +23,6 @@ spec:
       serviceAccountName: {{ template "splunk.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      volumes:
-      - name: conf
-        configMap:
-          name: conf
-      - name: httpinput
-        configMap:
-          name: httpinput
-      # I hate having to do this so much, you really don't understand...
-      - name: rfc5424-default
-        configMap:
-          name: rfc5424-default
-      - name: rfc5424-local
-        configMap:
-          name: rfc5424-local
-      - name: rfc5424-lookups
-        configMap:
-          name: rfc5424-lookups
-      - name: rfc5424-metadata
-        configMap:
-          name: rfc5424-metadata
-
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -81,6 +60,27 @@ spec:
             value: --accept-license
           - name: SPLUNK_CMD
             value: 'edit user admin -password {{ .Values.adminPassword }} -role admin -auth admin:changeme'
+      volumes:
+      - name: conf
+        configMap:
+          name: conf
+      - name: httpinput
+        configMap:
+          name: httpinput
+      # I hate having to do this so much, you really don't understand...
+      - name: rfc5424-default
+        configMap:
+          name: rfc5424-default
+      - name: rfc5424-local
+        configMap:
+          name: rfc5424-local
+      - name: rfc5424-lookups
+        configMap:
+          name: rfc5424-lookups
+      - name: rfc5424-metadata
+        configMap:
+          name: rfc5424-metadata
+
     {{- with .Values.web.deployment.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
