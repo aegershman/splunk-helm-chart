@@ -4,7 +4,7 @@ This is a crummy changelog. Sue me.
 
 ## [0.10.1]
 
-* configurable global HEC TLS option
+* configurable global HEC TLS option (on by default)
 
 ## [0.10.0]
 
