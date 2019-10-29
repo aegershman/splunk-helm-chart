@@ -41,19 +41,53 @@ service:
   ##
   annotations: {}
 
+##
+## When using an ingress, you don't specify the port
+## that's used for HEC. It's assumed :443 is used for both
+## the UI and HEC. These are the paths under any "host" value
+## that will route to the HEC.
+##
+## For example, given "ingress.hosts: [splunk.example.com]",
+## then the UI will be at https://splunk.example.com, and the
+## HEC endpoints will be at https://splunk.example.com/services/collector/...
+##
+## If you *aren't* using an ingress and are using a service: LoadBalancer,
+## then you still have to specify the port,
+## e.g. "https://loadbalanacerip:8088/services/..."
+##
+## It's *sort of* like the setup used by Splunk Cloud
+## https://docs.splunk.com/Documentation/SplunkCloud/7.2.7/Data/Senddata
+##
+## Generally we assume ingress is handling TLS termination, so TLS should
+## be disabled on the HEC, etc... Or I guess you could have the ingress do
+## TLS passthrough if you wanted to configure certificates on the
+## Splunk server directly. You do you.
+##
 ingress:
   enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
-      paths: []
+    - splunk.127.0.0.1.xip.io
 
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
-  #      - chart-example.local
+  #      - splunk.127.0.0.1.xip.io
+
+  ##
+  ## https://docs.splunk.com/Documentation/Splunk/7.3.2/Data/HECRESTendpoints
+  ##
+  ## There's probably no reason to change these, but if you want
+  ## to add more paths, in your values.yaml you'll likely need to include
+  ## the paths defined in this default
+  ##
+  hec:
+    paths:
+    - /services/collector
+    - /services/collector/event
+    - /services/collector/raw
 
 resources: {}
   # limits:

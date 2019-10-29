@@ -7,9 +7,10 @@ adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
 ingress:
   enabled: true
   hosts:
-    - host: splunk.127.0.0.1.xip.io
-      paths:
-        - /
+    - splunk.127.0.0.1.xip.io
+  tls:
+    - hosts:
+        - splunk.127.0.0.1.xip.io
 
 conf:
   inputs.conf: |
