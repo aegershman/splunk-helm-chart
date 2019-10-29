@@ -3,7 +3,7 @@ controller:
   hostNetwork: true
   service:
     type: NodePort
-    ## deactivates to save some IPs
+    ## deactivate to save some ports
     enableHttp: false
     enableHttps: false
 
@@ -13,5 +13,5 @@ defaultBackend:
 tcp:
   8000: "splunk/splunk:8000"
   # 9997: "splunk/splunk:9997"
-  # 8088: "splunk/splunk:8088"
+  8088: "splunk/splunk:8088"
   # 5514: "splunk/splunk:5514"
