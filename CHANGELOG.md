@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.8.0]
+
+* add labels to configmaps
+* backwards incompatible
+
 ## [0.7.0]
 
 * adds resource config
