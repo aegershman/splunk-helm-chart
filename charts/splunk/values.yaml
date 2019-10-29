@@ -27,7 +27,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-## TODO basically broken, only supports web UI
 service:
   type: ClusterIP
   port: 8000
