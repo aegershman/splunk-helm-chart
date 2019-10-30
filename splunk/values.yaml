@@ -90,6 +90,17 @@ ingress:
     - /services/collector/raw
 
 ##
+## Strategy for deployment updates
+##
+## strategy:
+##   type: RollingUpdate
+##   rollingUpdate:
+##     maxSurge: 1
+##     maxUnavailable: 25%
+##
+strategy: {}
+
+##
 ## Determine if the configured port is up.
 ## https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
 ##

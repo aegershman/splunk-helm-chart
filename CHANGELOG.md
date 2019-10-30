@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.12.2]
+
+* adds deployment strategy options
+
 ## [0.12.1]
 
 * fix label selector for affinity
