@@ -160,7 +160,8 @@ affinity: # {}
 ##
 revisionHistoryLimit: 10
 
-globalToken: 00000000-0000-0000-0000-000000000000
+splunk:
+  globalToken: 00000000-0000-0000-0000-000000000000
 
 ##
 ## global enable/disable of HEC SSL

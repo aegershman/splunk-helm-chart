@@ -24,7 +24,7 @@ data:
     enableSSL = {{ .Values.enableSSL }}
 
     [http://global]
-    token = {{ .Values.globalToken }}
+    token = {{ .Values.splunk.globalToken }}
 
 ---
 
