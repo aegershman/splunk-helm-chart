@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.13.0]
+
+* revision limits to prevent tons of replicasets
+
 ## [0.12.3]
 
 * comments at top of values yml

@@ -153,6 +153,13 @@ affinity: # {}
                   - splunk
           topologyKey: "kubernetes.io/hostname"
 
+##
+## Rollback limit
+## Prevents a ton of replicasets from sticking
+## around forever
+##
+revisionHistoryLimit: 10
+
 globalToken: 00000000-0000-0000-0000-000000000000
 
 ##
