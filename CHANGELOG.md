@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.12.1]
+
+* fix label selector for affinity
+
 ## [0.12.0]
 
 * adds probes. probe me, ~~aliens~~ ~~tsa~~ daddy.
