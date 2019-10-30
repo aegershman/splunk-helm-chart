@@ -42,6 +42,14 @@ spec:
               containerPort: {{ .Values.service.hecBindPort }}
             - name: syslog
               containerPort: {{ .Values.service.syslogBindPort }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
