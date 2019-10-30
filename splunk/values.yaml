@@ -161,6 +161,9 @@ affinity: # {}
 revisionHistoryLimit: 10
 
 splunk:
+  ##
+  ## global HEC token
+  ##
   globalToken: 00000000-0000-0000-0000-000000000000
 
   ##
@@ -175,7 +178,10 @@ splunk:
   ##
   enableSSL: 1
 
-adminPassword: changemePlease
+  ##
+  ## admin password used on UX
+  ##
+  adminPassword: changemePlease
 
 conf:
   ## You can include any kind of *.conf file when overriding
