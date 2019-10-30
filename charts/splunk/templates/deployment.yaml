@@ -12,6 +12,10 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
+      ## TODO rolls deployment on configmap changes
+      ## but should be investigated more
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
         app.kubernetes.io/name: {{ include "splunk.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}

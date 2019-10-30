@@ -2,6 +2,12 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.11.2]
+
+* Roll deployment on configmap changes
+* turn off recreate pods on local dev
+* still requires an update strategy, testing, investigation, etc.
+
 ## [0.11.1]
 
 * Forgot to update the connection test earlier
