@@ -16,7 +16,7 @@ releases:
 
   - name: splunk
     namespace: splunk
-    chart: ../charts/splunk
+    chart: ../splunk
     installed: true
     recreatePods: false
     force: false
