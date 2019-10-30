@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.11.1]
+
+* Forgot to update the connection test earlier
+
 ## [0.11.0]
 
 * prefixes configmap names with the chart name
