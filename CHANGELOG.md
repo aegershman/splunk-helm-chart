@@ -5,7 +5,8 @@ This is a crummy changelog. Sue me.
 ## [0.12.0]
 
 * adds probes. probe me, ~~aliens~~ ~~tsa~~ daddy.
-* still work to be done on improving probes
+* finally, this allows an actual rolling update
+* should be able to roll the deployment w/o losing logs now
 
 ## [0.11.3]
 
