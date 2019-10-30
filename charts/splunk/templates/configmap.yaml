@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: conf
+  name: {{ include "splunk.fullname" . }}-conf
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
@@ -15,7 +15,7 @@ data:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: httpinput
+  name: {{ include "splunk.fullname" . }}-httpinput
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
@@ -34,7 +34,7 @@ data:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: rfc5424-default
+  name: {{ include "splunk.fullname" . }}-rfc5424-default
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
@@ -45,7 +45,7 @@ data:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: rfc5424-local
+  name: {{ include "splunk.fullname" . }}-rfc5424-local
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
@@ -56,7 +56,7 @@ data:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: rfc5424-lookups
+  name: {{ include "splunk.fullname" . }}-rfc5424-lookups
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
@@ -67,7 +67,7 @@ data:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: rfc5424-metadata
+  name: {{ include "splunk.fullname" . }}-rfc5424-metadata
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
