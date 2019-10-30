@@ -2,6 +2,12 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.12.0]
+
+* adds probes. probe me, ~~aliens~~ ~~tsa~~ daddy.
+* finally, this allows an actual rolling update
+* should be able to roll the deployment w/o losing logs now
+
 ## [0.11.3]
 
 * moves 'splunk' chart up a layer out of "charts"
