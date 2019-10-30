@@ -46,10 +46,10 @@ spec:
           livenessProbe:
             {{- toYaml . | nindent 12 }}
         {{- end }}
-{{- if .Values.readinessProbe }}
+        {{- with .Values.readinessProbe }}
           readinessProbe:
-{{ toYaml .Values.readinessProbe | indent 12 }}
-{{- end }}
+            {{- toYaml . | nindent 12 }}
+        {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
