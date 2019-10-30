@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.14.0]
+
+* reorders app-related config params under `splunk` key
+
 ## [0.13.0]
 
 * revision limits to prevent tons of replicasets
