@@ -20,9 +20,11 @@ metadata:
 {{ include "splunk.labels" . | indent 4 }}
 data:
   inputs.conf: |
+    [http]
+    enableSSL = {{ .Values.enableSSL }}
+
     [http://global]
     token = {{ .Values.globalToken }}
-    enableSSL = {{ .Values.enableSSL }}
 
 ---
 
