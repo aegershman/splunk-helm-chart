@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.12.0]
+
+* adds probes. probe me, ~~aliens~~ ~~tsa~~ daddy.
+* still work to be done on improving probes
+
 ## [0.11.3]
 
 * moves 'splunk' chart up a layer out of "charts"
