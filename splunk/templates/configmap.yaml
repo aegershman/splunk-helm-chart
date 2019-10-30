@@ -21,7 +21,7 @@ metadata:
 data:
   inputs.conf: |
     [http]
-    enableSSL = {{ .Values.enableSSL }}
+    enableSSL = {{ .Values.splunk.enableSSL }}
 
     [http://global]
     token = {{ .Values.splunk.globalToken }}
