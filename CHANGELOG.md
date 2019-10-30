@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.12.3]
+
+* comments at top of values yml
+
 ## [0.12.2]
 
 * adds deployment strategy options
