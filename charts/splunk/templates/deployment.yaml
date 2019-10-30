@@ -62,23 +62,23 @@ spec:
       volumes:
         - name: conf
           configMap:
-            name: conf
+            name: {{ include "splunk.fullname" . }}-conf
         - name: httpinput
           configMap:
-            name: httpinput
+            name: {{ include "splunk.fullname" . }}-httpinput
         # I hate having to do this so much, you really don't understand...
         - name: rfc5424-default
           configMap:
-            name: rfc5424-default
+            name: {{ include "splunk.fullname" . }}-rfc5424-default
         - name: rfc5424-local
           configMap:
-            name: rfc5424-local
+            name: {{ include "splunk.fullname" . }}-rfc5424-local
         - name: rfc5424-lookups
           configMap:
-            name: rfc5424-lookups
+            name: {{ include "splunk.fullname" . }}-rfc5424-lookups
         - name: rfc5424-metadata
           configMap:
-            name: rfc5424-metadata
+            name: {{ include "splunk.fullname" . }}-rfc5424-metadata
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
