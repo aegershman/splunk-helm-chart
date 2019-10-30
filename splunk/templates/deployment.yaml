@@ -73,7 +73,7 @@ spec:
             - name: SPLUNK_START_ARGS
               value: --accept-license
             - name: SPLUNK_CMD
-              value: 'edit user admin -password {{ .Values.adminPassword }} -role admin -auth admin:changeme'
+              value: 'edit user admin -password {{ .Values.splunk.adminPassword }} -role admin -auth admin:changeme'
       volumes:
         - name: conf
           configMap:

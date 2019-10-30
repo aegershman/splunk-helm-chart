@@ -160,29 +160,39 @@ affinity: # {}
 ##
 revisionHistoryLimit: 10
 
-globalToken: 00000000-0000-0000-0000-000000000000
+splunk:
+  ##
+  ## global HEC token
+  ##
+  globalToken: 00000000-0000-0000-0000-000000000000
 
-##
-## global enable/disable of HEC SSL
-## set off if using an ingress
-## that's performing TLS termination for you
-##
-## otherwise, if you're using a service: loadBalancer
-## or your ingress is doing TLS passthrough since
-## you want to do your TLS termination on Splunk itself,
-## you'll probably want to set this on
-##
-enableSSL: 1
+  ##
+  ## global enable/disable of HEC SSL
+  ## set off if using an ingress
+  ## that's performing TLS termination for you
+  ##
+  ## otherwise, if you're using a service: loadBalancer
+  ## or your ingress is doing TLS passthrough since
+  ## you want to do your TLS termination on Splunk itself,
+  ## you'll probably want to set this on
+  ##
+  enableSSL: 1
 
-adminPassword: changemePlease
+  ##
+  ## admin password used on UX
+  ##
+  adminPassword: changemePlease
 
-conf:
-  ## You can include any kind of *.conf file when overriding
-  # indexes.conf: |
-  #   [exampleIndex]
-  #   homePath = $SPLUNK_DB/exampleIndex/db
-  #   coldPath = $SPLUNK_DB/exampleIndex/colddb
-  #   thawedPath = $SPLUNK_DB/exampleIndex/thaweddb
-  # outputs.conf: |
-  #   [some-example]
-  #   example one two three
+  ##
+  ## Splunk configuration files
+  ## You can include any kind of *.conf file
+  ##
+  conf:
+    # indexes.conf: |
+    #   [exampleIndex]
+    #   homePath = $SPLUNK_DB/exampleIndex/db
+    #   coldPath = $SPLUNK_DB/exampleIndex/colddb
+    #   thawedPath = $SPLUNK_DB/exampleIndex/thaweddb
+    # outputs.conf: |
+    #   [some-example]
+    #   example one two three

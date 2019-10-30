@@ -5,7 +5,7 @@ metadata:
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
-{{- range $key, $value := .Values.conf }}
+{{- range $key, $value := .Values.splunk.conf }}
 {{ $key | indent 2 }}: |
 {{ $value | indent 4 }}
 {{- end }}
@@ -21,10 +21,10 @@ metadata:
 data:
   inputs.conf: |
     [http]
-    enableSSL = {{ .Values.enableSSL }}
+    enableSSL = {{ .Values.splunk.enableSSL }}
 
     [http://global]
-    token = {{ .Values.globalToken }}
+    token = {{ .Values.splunk.globalToken }}
 
 ---
 
