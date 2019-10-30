@@ -12,7 +12,8 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-      ## TODO unclear if this is acceptable
+      ## TODO rolls deployment on configmap changes
+      ## but should be investigated more
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
