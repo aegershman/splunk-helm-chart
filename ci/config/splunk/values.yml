@@ -8,11 +8,7 @@ adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
 # we're doing TLS termination at the ingress
 enableSSL: 0
 
-# strategy:
-#   type: RollingUpdate
-#   rollingUpdate:
-#     maxSurge: 1
-#     maxUnavailable: 25%
+revisionHistoryLimit: 2
 
 ingress:
   enabled: true
