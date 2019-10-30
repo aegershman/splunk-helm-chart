@@ -42,10 +42,10 @@ spec:
               containerPort: {{ .Values.service.hecBindPort }}
             - name: syslog
               containerPort: {{ .Values.service.syslogBindPort }}
-{{- if .Values.livenessProbe }}
+        {{- with .Values.livenessProbe }}
           livenessProbe:
-{{ toYaml .Values.livenessProbe | indent 12 }}
-{{- end }}
+            {{- toYaml . | nindent 12 }}
+        {{- end }}
 {{- if .Values.readinessProbe }}
           readinessProbe:
 {{ toYaml .Values.readinessProbe | indent 12 }}
