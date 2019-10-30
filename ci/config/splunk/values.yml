@@ -1,14 +1,5 @@
 replicaCount: 1
 
-splunk:
-  globalToken: b51a8063-8316-4433-8963-a9af78afce17 # uuidgen
-
-  ## turn off splunk HEC's SSL requirement since
-  ## we're doing TLS termination at the ingress
-  enableSSL: 0
-
-  adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
-
 revisionHistoryLimit: 2
 
 ingress:
@@ -19,23 +10,32 @@ ingress:
     - hosts:
         - splunk.127.0.0.1.xip.io
 
-conf:
-  inputs.conf: |
-    # Splunk forwarder internal logs can be forwarded too
-    [monitor://$SPLUNK_HOME/var/log/splunk/metrics.log]
+splunk:
+  globalToken: b51a8063-8316-4433-8963-a9af78afce17 # uuidgen
 
-    # Our syslog entrypoint
-    [tcp://5514]
-    connection_host = dns
-    disabled = 0
-    index = main
-    sourcetype = rfc5424_syslog
-    # This is definitely not kosher to include the `env` name as a prefix to `source`
-    # but I'm going to do it anyway to make searching per-env easier
-    # but yeah, honestly this is abusing the `source` field
-    # This entirely field should eventually be deleted
-    source = local_tcp:5514
+  ## turn off splunk HEC's SSL requirement since
+  ## we're doing TLS termination at the ingress
+  enableSSL: 0
 
-  outputs.conf: |
-    [tcpout]
-    indexAndForward = true
+  adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
+
+  conf:
+    inputs.conf: |
+      # Splunk forwarder internal logs can be forwarded too
+      [monitor://$SPLUNK_HOME/var/log/splunk/metrics.log]
+
+      # Our syslog entrypoint
+      [tcp://5514]
+      connection_host = dns
+      disabled = 0
+      index = main
+      sourcetype = rfc5424_syslog
+      # This is definitely not kosher to include the `env` name as a prefix to `source`
+      # but I'm going to do it anyway to make searching per-env easier
+      # but yeah, honestly this is abusing the `source` field
+      # This entirely field should eventually be deleted
+      source = local_tcp:5514
+
+    outputs.conf: |
+      [tcpout]
+      indexAndForward = true

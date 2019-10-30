@@ -183,13 +183,16 @@ splunk:
   ##
   adminPassword: changemePlease
 
-conf:
-  ## You can include any kind of *.conf file when overriding
-  # indexes.conf: |
-  #   [exampleIndex]
-  #   homePath = $SPLUNK_DB/exampleIndex/db
-  #   coldPath = $SPLUNK_DB/exampleIndex/colddb
-  #   thawedPath = $SPLUNK_DB/exampleIndex/thaweddb
-  # outputs.conf: |
-  #   [some-example]
-  #   example one two three
+  ##
+  ## Splunk configuration files
+  ## You can include any kind of *.conf file
+  ##
+  conf:
+    # indexes.conf: |
+    #   [exampleIndex]
+    #   homePath = $SPLUNK_DB/exampleIndex/db
+    #   coldPath = $SPLUNK_DB/exampleIndex/colddb
+    #   thawedPath = $SPLUNK_DB/exampleIndex/thaweddb
+    # outputs.conf: |
+    #   [some-example]
+    #   example one two three
