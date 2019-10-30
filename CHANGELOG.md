@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.11.0]
+
+* prefixes configmap names with the chart name
+* allows for better config namespacing
+
 ## [0.10.1]
 
 * configurable global HEC TLS option (on by default)
