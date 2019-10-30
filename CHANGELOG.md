@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.11.3]
+
+* moves 'splunk' chart up a layer out of "charts"
+* just cosmetic
+
 ## [0.11.2]
 
 * Roll deployment on configmap changes
