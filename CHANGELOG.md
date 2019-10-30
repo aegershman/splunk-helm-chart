@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.11.2]
+
+* Roll deployment on configmap changes
+
 ## [0.11.1]
 
 * Forgot to update the connection test earlier
