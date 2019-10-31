@@ -52,8 +52,6 @@ spec:
               mountPath: /tmp/defaults
             - name: conf
               mountPath: /var/opt/splunk/etc/system/local
-            - name: httpinput
-              mountPath: /var/opt/splunk/etc/apps/splunk_httpinput/local
             # Same thing: hate having to do this, but it's better than nothing
             - name: rfc5424-default
               mountPath: /var/opt/splunk/etc/apps/rfc5424/default
@@ -77,9 +75,6 @@ spec:
         - name: conf
           configMap:
             name: {{ include "splunk.fullname" . }}-conf
-        - name: httpinput
-          configMap:
-            name: {{ include "splunk.fullname" . }}-httpinput
         # I hate having to do this so much, you really don't understand...
         - name: rfc5424-default
           configMap:

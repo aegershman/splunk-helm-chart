@@ -27,22 +27,6 @@ data:
 
 ---
 
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: {{ include "splunk.fullname" . }}-httpinput
-  labels:
-{{ include "splunk.labels" . | indent 4 }}
-data:
-  inputs.conf: |
-    [http]
-    enableSSL = {{ .Values.splunk.enableSSL }}
-
-    [http://global]
-    token = {{ .Values.splunk.globalToken }}
-
----
-
 # Now we'll create a bunch of configMaps for all the individual
 # folders which makeup a splunk app... which sucks.
 
