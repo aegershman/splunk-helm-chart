@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.17.0]
+
+* trying to add back ability to configure rfc5242 apps and others
+
 ## [0.16.0]
 
 * move from `7.0.3` of docker-legacy to `8.0.0` image
