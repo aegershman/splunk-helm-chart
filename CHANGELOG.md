@@ -12,6 +12,7 @@ This is a crummy changelog. Sue me.
 * removes adminPassword in favor of defaults
 * removes configmaps for transforms and props and such in favor of yaml properties
 * rm comment on configmap changes rolling deployments
+* REMOVES and DOES NOT SOLVE the rfc5245 app issue yet, will do that in separate release
 
 ## [0.15.0]
 
