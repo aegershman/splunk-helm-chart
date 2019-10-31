@@ -10,3 +10,17 @@ data:
   {{- with .Values.splunk.defaultYml }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "splunk.fullname" . }}-apps
+  labels:
+{{ include "splunk.labels" . | indent 4 }}
+binaryData:
+{{- $root := . }}
+{{- range $path, $bytes := .Files.Glob "splunk-apps/rfc5424*.tgz" }}
+  {{ base $path }}: {{ $root.Files.Get $path | b64enc | quote }}
+{{- end }}

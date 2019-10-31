@@ -25,6 +25,10 @@ splunk:
       ## we could also throw this in the secrets.yml
       password: e9f630105cd740e3b0d81439ef821973
 
+      ## makes any tgz filesystem apps available
+      apps_location:
+        - "/tmp/apps/rfc5424-syslog_11.tgz"
+
       ##
       ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#configuration-files
       ##

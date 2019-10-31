@@ -5,6 +5,7 @@ This is a crummy changelog. Sue me.
 ## [0.17.0]
 
 * trying to add back ability to configure rfc5242 apps and others
+* forgot to bump chart appversion to 8.0.0
 
 ## [0.16.0]
 

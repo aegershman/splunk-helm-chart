@@ -48,6 +48,8 @@ spec:
           volumeMounts:
             - name: splunk-defaults
               mountPath: /tmp/defaults
+            - name: splunk-apps
+              mountPath: /tmp/apps
           env:
             - name: SPLUNK_START_ARGS
               value: --accept-license
@@ -55,6 +57,9 @@ spec:
         - name: splunk-defaults
           configMap:
             name: {{ include "splunk.fullname" . }}-defaults
+        - name: splunk-apps
+          configMap:
+            name: {{ include "splunk.fullname" . }}-apps
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
