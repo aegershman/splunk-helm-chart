@@ -10,6 +10,7 @@ This is a crummy changelog. Sue me.
 * removes globalToken in favor of hec_token in defaults.yml
 * removes enableSSL on hec in favor of hec_enableSSL from defaults
 * removes adminPassword in favor of defaults
+* removes configmaps for transforms and props and such in favor of yaml properties
 
 ## [0.15.0]
 
