@@ -21,7 +21,9 @@ splunk:
       ## we could also throw this in the secrets.yml
       hec_token: b51a8063-8316-4433-8963-a9af78afce17
 
-  adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
+      ## uuidgen
+      ## we could also throw this in the secrets.yml
+      password: e9f630105cd740e3b0d81439ef821973
 
   conf:
     inputs.conf: |

@@ -64,8 +64,6 @@ spec:
           env:
             - name: SPLUNK_START_ARGS
               value: --accept-license
-            - name: SPLUNK_PASSWORD
-              value: {{ .Values.splunk.adminPassword }}
       volumes:
         - name: splunk-defaults
           configMap:

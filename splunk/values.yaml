@@ -142,11 +142,6 @@ revisionHistoryLimit: 10
 splunk:
 
   ##
-  ## admin password used on UX
-  ##
-  adminPassword: changemePlease
-
-  ##
   ## Splunk configuration files
   ## You can include any kind of *.conf file
   ##

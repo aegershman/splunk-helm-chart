@@ -9,6 +9,7 @@ This is a crummy changelog. Sue me.
 * remove httpconfig configmap
 * removes globalToken in favor of hec_token in defaults.yml
 * removes enableSSL on hec in favor of hec_enableSSL from defaults
+* removes adminPassword in favor of defaults
 
 ## [0.15.0]
 
