@@ -6,7 +6,7 @@ replicaCount: 3
 
 image:
   repository: splunk/splunk
-  tag: 7.0.3-monitor
+  tag: 8.0.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
