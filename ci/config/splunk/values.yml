@@ -11,8 +11,6 @@ ingress:
         - splunk.127.0.0.1.xip.io
 
 splunk:
-  debug: true
-
   globalToken: b51a8063-8316-4433-8963-a9af78afce17 # uuidgen
 
   ## turn off splunk HEC's SSL requirement since
