@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.16.0]
+
+* move from `7.0.3` of docker-legacy to later images
+
 ## [0.15.0]
 
 * temporarily remove probes because I'm a dingus and can't get them to play nice locally
