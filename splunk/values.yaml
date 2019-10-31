@@ -104,27 +104,6 @@ ingress:
 ##
 strategy: {}
 
-##
-## Determine if the configured port is up.
-## https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
-##
-livenessProbe:
-  failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
-  timeoutSeconds: 1
-  httpGet:
-    path: /
-    port: http
-
-##
-## https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
-##
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
-
 resources: {}
   # limits:
   #   cpu: 100m

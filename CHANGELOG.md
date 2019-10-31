@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.15.0]
+
+* temporarily remove probes because I'm a dingus and can't get them to play nice locally
+
 ## [0.14.0]
 
 * reorders app-related config params under `splunk` key
