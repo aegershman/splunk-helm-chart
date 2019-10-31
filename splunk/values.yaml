@@ -182,8 +182,10 @@ splunk:
     #   [some-example]
     #   example one two three
 
+  ##
   ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
-  defaultsConfigFile:
+  ##
+  defaultYml:
     ansible_post_tasks: null
     ansible_pre_tasks: null
     hide_password: false
