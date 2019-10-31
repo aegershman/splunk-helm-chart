@@ -5,6 +5,7 @@ This is a crummy changelog. Sue me.
 ## [0.16.0]
 
 * move from `7.0.3` of docker-legacy to later images
+* bumps to `8.0.0`
 
 ## [0.15.0]
 
