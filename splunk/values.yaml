@@ -147,18 +147,6 @@ splunk:
   globalToken: 00000000-0000-0000-0000-000000000000
 
   ##
-  ## global enable/disable of HEC SSL
-  ## set off if using an ingress
-  ## that's performing TLS termination for you
-  ##
-  ## otherwise, if you're using a service: loadBalancer
-  ## or your ingress is doing TLS passthrough since
-  ## you want to do your TLS termination on Splunk itself,
-  ## you'll probably want to set this on
-  ##
-  enableSSL: 1
-
-  ##
   ## admin password used on UX
   ##
   adminPassword: changemePlease
