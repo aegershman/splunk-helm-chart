@@ -7,6 +7,8 @@ This is a crummy changelog. Sue me.
 * move from `7.0.3` of docker-legacy to `8.0.0` image
 * basic-ish use of `defaults.yml` as per [the splunk-ansible and operator repo](https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example)
 * remove httpconfig configmap
+* removes globalToken in favor of hec_token in defaults.yml
+* removes enableSSL on hec in favor of hec_enableSSL from defaults
 
 ## [0.15.0]
 

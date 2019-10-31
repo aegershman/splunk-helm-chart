@@ -66,8 +66,6 @@ spec:
               value: --accept-license
             - name: SPLUNK_PASSWORD
               value: {{ .Values.splunk.adminPassword }}
-            - name: SPLUNK_HEC_TOKEN
-              value: {{ .Values.splunk.globalToken }}
       volumes:
         - name: splunk-defaults
           configMap:

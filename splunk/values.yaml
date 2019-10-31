@@ -142,11 +142,6 @@ revisionHistoryLimit: 10
 splunk:
 
   ##
-  ## global HEC token
-  ##
-  globalToken: 00000000-0000-0000-0000-000000000000
-
-  ##
   ## admin password used on UX
   ##
   adminPassword: changemePlease
