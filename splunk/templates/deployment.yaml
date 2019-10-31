@@ -69,7 +69,7 @@ spec:
             - name: SPLUNK_HEC_TOKEN
               value: {{ .Values.splunk.globalToken }}
             - name: DEBUG
-              value: {{ .Values.splunk.debug }}
+              value: {{ .Values.splunk.debug | quote }}
       volumes:
         - name: conf
           configMap:
