@@ -140,6 +140,12 @@ affinity: # {}
 revisionHistoryLimit: 10
 
 splunk:
+
+  ##
+  ## print Ansible vars to stdout
+  ##
+  debug: false
+
   ##
   ## global HEC token
   ##
