@@ -7,6 +7,7 @@ This is a crummy changelog. Sue me.
 * move from `7.0.3` of docker-legacy to later images
 * bumps to `8.0.0`
 * adds debug flag
+* hamfisted inclusion of `defaults.yml` as per [the splunk-ansible and operator repo](https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example)
 
 ## [0.15.0]
 
