@@ -161,11 +161,6 @@ splunk:
     #   example one two three
 
   ##
-  ## https://github.com/splunk/splunk-operator/blob/master/docs/Examples.md
-  ##
-  defaultsUrl: "/mnt/defaults/default.yml"
-
-  ##
   ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
   ##
   defaultYml:
