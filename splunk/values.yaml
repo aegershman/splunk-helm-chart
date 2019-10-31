@@ -6,7 +6,7 @@ replicaCount: 3
 
 image:
   repository: splunk/splunk
-  tag: 7.0.3-monitor
+  tag: 8.0.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -140,38 +140,86 @@ affinity: # {}
 revisionHistoryLimit: 10
 
 splunk:
-  ##
-  ## global HEC token
-  ##
-  globalToken: 00000000-0000-0000-0000-000000000000
 
   ##
-  ## global enable/disable of HEC SSL
-  ## set off if using an ingress
-  ## that's performing TLS termination for you
+  ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
   ##
-  ## otherwise, if you're using a service: loadBalancer
-  ## or your ingress is doing TLS passthrough since
-  ## you want to do your TLS termination on Splunk itself,
-  ## you'll probably want to set this on
-  ##
-  enableSSL: 1
+  defaultYml:
+    ansible_post_tasks: null
+    ansible_pre_tasks: null
+    hide_password: false
+    retry_num: 50
+    shc_bootstrap_delay: 30
+    splunk_home_ownership_enforcement: true
 
-  ##
-  ## admin password used on UX
-  ##
-  adminPassword: changemePlease
+    config:
+      baked: default.yml
+      defaults_dir: /tmp/defaults
+      env:
+        headers: null
+        var: SPLUNK_DEFAULTS_URL
+        verify: true
+      host:
+        headers: null
+        url: null
+        verify: true
+      max_delay: 60
+      max_retries: 3
+      max_timeout: 1200
 
-  ##
-  ## Splunk configuration files
-  ## You can include any kind of *.conf file
-  ##
-  conf:
-    # indexes.conf: |
-    #   [exampleIndex]
-    #   homePath = $SPLUNK_DB/exampleIndex/db
-    #   coldPath = $SPLUNK_DB/exampleIndex/colddb
-    #   thawedPath = $SPLUNK_DB/exampleIndex/thaweddb
-    # outputs.conf: |
-    #   [some-example]
-    #   example one two three
+    splunk:
+      role: splunk_standalone
+      upgrade: false
+      build_location: /tmp/splunk.tgz
+      build_remote_src: true
+      license_master_included: false
+      apps_location: null
+      license_uri: null
+      admin_user: admin
+      app_paths:
+        default: /opt/splunk/etc/apps
+        deployment: /opt/splunk/etc/deployment-apps
+        httpinput: /opt/splunk/etc/apps/splunk_httpinput
+        idxc: /opt/splunk/etc/master-apps
+        shc: /opt/splunk/etc/shcluster/apps
+      enable_service: false
+      exec: /opt/splunk/bin/splunk
+      group: splunk
+      hec_disabled: 0
+      hec_enableSSL: 1
+      hec_port: 8088
+      hec_token: 4a8a737d-5452-426c-a6f7-106dca4e813f
+      home: /opt/splunk
+      http_enableSSL: 0
+      http_enableSSL_cert: null
+      http_enableSSL_privKey: null
+      http_enableSSL_privKey_password: null
+      http_port: 8000
+      idxc:
+        enable: false
+        label: idxc_label
+        replication_factor: 3
+        replication_port: 9887
+        search_factor: 3
+        secret: dmwHG97SpM+GzeGPUELwr7xXowSAVmLW
+      ignore_license: false
+      license_download_dest: /tmp/splunk.lic
+      nfr_license: /tmp/nfr_enterprise.lic
+      opt: /opt
+      password: helloworld
+      pid: /opt/splunk/var/run/splunk/splunkd.pid
+      s2s_enable: true
+      s2s_port: 9997
+      search_head_cluster_url: null
+      secret: null
+      shc:
+        enable: false
+        label: shc_label
+        replication_factor: 3
+        replication_port: 9887
+        secret: EpcUlTUHMSOhdjRZb3QqPYf9Lf7L991c
+      smartstore: null
+      svc_port: 8089
+      tar_dir: splunk
+      user: splunk
+      wildcard_license: false

@@ -2,6 +2,18 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.16.0]
+
+* move from `7.0.3` of docker-legacy to `8.0.0` image
+* basic-ish use of `defaults.yml` as per [the splunk-ansible and operator repo](https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example)
+* remove httpconfig configmap
+* removes globalToken in favor of hec_token in defaults.yml
+* removes enableSSL on hec in favor of hec_enableSSL from defaults
+* removes adminPassword in favor of defaults
+* removes configmaps for transforms and props and such in favor of yaml properties
+* rm comment on configmap changes rolling deployments
+* REMOVES and DOES NOT SOLVE the rfc5245 app issue yet, will do that in separate release
+
 ## [0.15.0]
 
 * temporarily remove probes because I'm a dingus and can't get them to play nice locally

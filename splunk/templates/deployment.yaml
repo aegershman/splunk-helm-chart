@@ -15,8 +15,6 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-      ## TODO rolls deployment on configmap changes
-      ## but should be investigated more
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
       labels:
@@ -48,44 +46,15 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-            - name: conf
-              mountPath: /var/opt/splunk/etc/system/local
-            - name: httpinput
-              mountPath: /var/opt/splunk/etc/apps/splunk_httpinput/local
-            # Same thing: hate having to do this, but it's better than nothing
-            - name: rfc5424-default
-              mountPath: /var/opt/splunk/etc/apps/rfc5424/default
-            - name: rfc5424-local
-              mountPath: /var/opt/splunk/etc/apps/rfc5424/local
-            - name: rfc5424-lookups
-              mountPath: /var/opt/splunk/etc/apps/rfc5424/lookups
-            - name: rfc5424-metadata
-              mountPath: /var/opt/splunk/etc/apps/rfc5424/metadata
+            - name: splunk-defaults
+              mountPath: /tmp/defaults
           env:
             - name: SPLUNK_START_ARGS
               value: --accept-license
-            - name: SPLUNK_CMD
-              value: 'edit user admin -password {{ .Values.splunk.adminPassword }} -role admin -auth admin:changeme'
       volumes:
-        - name: conf
+        - name: splunk-defaults
           configMap:
-            name: {{ include "splunk.fullname" . }}-conf
-        - name: httpinput
-          configMap:
-            name: {{ include "splunk.fullname" . }}-httpinput
-        # I hate having to do this so much, you really don't understand...
-        - name: rfc5424-default
-          configMap:
-            name: {{ include "splunk.fullname" . }}-rfc5424-default
-        - name: rfc5424-local
-          configMap:
-            name: {{ include "splunk.fullname" . }}-rfc5424-local
-        - name: rfc5424-lookups
-          configMap:
-            name: {{ include "splunk.fullname" . }}-rfc5424-lookups
-        - name: rfc5424-metadata
-          configMap:
-            name: {{ include "splunk.fullname" . }}-rfc5424-metadata
+            name: {{ include "splunk.fullname" . }}-defaults
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

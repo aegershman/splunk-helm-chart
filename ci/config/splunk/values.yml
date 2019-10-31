@@ -11,31 +11,42 @@ ingress:
         - splunk.127.0.0.1.xip.io
 
 splunk:
-  globalToken: b51a8063-8316-4433-8963-a9af78afce17 # uuidgen
+  defaultYml:
+    splunk:
+      ## turn off splunk HEC's SSL requirement since
+      ## we're doing TLS termination at the ingress
+      hec_enableSSL: 0
 
-  ## turn off splunk HEC's SSL requirement since
-  ## we're doing TLS termination at the ingress
-  enableSSL: 0
+      ## uuidgen
+      ## we could also throw this in the secrets.yml
+      hec_token: b51a8063-8316-4433-8963-a9af78afce17
 
-  adminPassword: e9f630105cd740e3b0d81439ef821973 # uuidgen
+      ## uuidgen
+      ## we could also throw this in the secrets.yml
+      password: e9f630105cd740e3b0d81439ef821973
 
-  conf:
-    inputs.conf: |
-      # Splunk forwarder internal logs can be forwarded too
-      [monitor://$SPLUNK_HOME/var/log/splunk/metrics.log]
+      ##
+      ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#configuration-files
+      ##
+      conf:
+        inputs:
+          content:
+            # Splunk forwarder internal logs can be forwarded too
+            monitor://$SPLUNK_HOME/var/log/splunk/metrics.log: ~
 
-      # Our syslog entrypoint
-      [tcp://5514]
-      connection_host = dns
-      disabled = 0
-      index = main
-      sourcetype = rfc5424_syslog
-      # This is definitely not kosher to include the `env` name as a prefix to `source`
-      # but I'm going to do it anyway to make searching per-env easier
-      # but yeah, honestly this is abusing the `source` field
-      # This entirely field should eventually be deleted
-      source = local_tcp:5514
+            # Our syslog entrypoint
+            tcp://5514:
+              connection_host: dns
+              disabled: 0
+              index: main
+              sourcetype: rfc5424_syslog
+              # This is definitely not kosher to include the `env` name as a prefix to `source`
+              # but I'm going to do it anyway to make searching per-env easier
+              # but yeah, honestly this is abusing the `source` field
+              # This entirely field should eventually be deleted
+              source: local_tcp:5514
 
-    outputs.conf: |
-      [tcpout]
-      indexAndForward = true
+        outputs:
+          content:
+            tcpout:
+              indexAndForward: true
