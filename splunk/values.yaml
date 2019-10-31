@@ -185,12 +185,12 @@ splunk:
   ##
   ## https://github.com/splunk/splunk-operator/blob/master/docs/Examples.md
   ##
-  defaultsUrl: "/mnt/defaults/defaults.yml"
+  defaultsUrl: "/mnt/defaults/default.yml"
 
   ##
   ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
   ##
-  defaultsYml:
+  defaultYml:
     ansible_post_tasks: null
     ansible_pre_tasks: null
     hide_password: false

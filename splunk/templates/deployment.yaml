@@ -72,8 +72,8 @@ spec:
               value: {{ .Values.splunk.globalToken }}
             - name: DEBUG
               value: {{ .Values.splunk.debug | quote }}
-            - name: SPLUNK_DEFAULTS_URL
-              value: {{ .Values.splunk.defaultsUrl | quote }}
+            # - name: SPLUNK_DEFAULTS_URL
+            #   value: {{ .Values.splunk.defaultsUrl | quote }}
       volumes:
         - name: splunk-defaults
           configMap:

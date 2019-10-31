@@ -5,8 +5,8 @@ metadata:
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
-  defaults.yml: |
-  {{- with .Values.splunk.defaultsYml }}
+  default.yml: |
+  {{- with .Values.splunk.defaultYml }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
 
