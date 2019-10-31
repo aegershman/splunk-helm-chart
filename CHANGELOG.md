@@ -11,6 +11,7 @@ This is a crummy changelog. Sue me.
 * removes enableSSL on hec in favor of hec_enableSSL from defaults
 * removes adminPassword in favor of defaults
 * removes configmaps for transforms and props and such in favor of yaml properties
+* rm comment on configmap changes rolling deployments
 
 ## [0.15.0]
 
