@@ -48,6 +48,8 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+            - name: splunk-defaults
+              mountPath: /tmp/defaults/default.yml
             - name: conf
               mountPath: /var/opt/splunk/etc/system/local
             - name: httpinput
@@ -70,7 +72,12 @@ spec:
               value: {{ .Values.splunk.globalToken }}
             - name: DEBUG
               value: {{ .Values.splunk.debug | quote }}
+            - name: SPLUNK_DEFAULTS_URL
+              value: {{ .Values.splunk.defaultsUrl | quote }}
       volumes:
+        - name: splunk-defaults
+          configMap:
+            name: {{ include "splunk.fullname" . }}-defaults
         - name: conf
           configMap:
             name: {{ include "splunk.fullname" . }}-conf

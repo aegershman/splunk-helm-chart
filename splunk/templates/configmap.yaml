@@ -1,12 +1,12 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: {{ include "splunk.fullname" . }}-default
+  name: {{ include "splunk.fullname" . }}-defaults
   labels:
 {{ include "splunk.labels" . | indent 4 }}
 data:
-  default.yml: |
-  {{- with .Values.splunk.defaultYml }}
+  defaults.yml: |
+  {{- with .Values.splunk.defaultsYml }}
     {{- toYaml . | nindent 4 }}
   {{- end }}
 
