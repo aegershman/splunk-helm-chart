@@ -142,11 +142,6 @@ revisionHistoryLimit: 10
 splunk:
 
   ##
-  ## print Ansible vars to stdout
-  ##
-  debug: false
-
-  ##
   ## global HEC token
   ##
   globalToken: 00000000-0000-0000-0000-000000000000

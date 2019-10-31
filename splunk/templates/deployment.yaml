@@ -70,8 +70,6 @@ spec:
               value: {{ .Values.splunk.adminPassword }}
             - name: SPLUNK_HEC_TOKEN
               value: {{ .Values.splunk.globalToken }}
-            - name: DEBUG
-              value: {{ .Values.splunk.debug | quote }}
       volumes:
         - name: splunk-defaults
           configMap:
