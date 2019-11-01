@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.16.1]
+
+* cuts an actual release
+* makes sure the appVersion is 8.0.0 instead of 7.0.3, that should've been fixed in previous release my bad
+
 ## [0.16.0]
 
 * move from `7.0.3` of docker-legacy to `8.0.0` image
