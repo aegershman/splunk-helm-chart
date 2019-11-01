@@ -33,3 +33,8 @@ tasks:
   test:
     cmds:
       - helm test splunk --cleanup --logs
+
+  release:
+    cmds:
+      - helm package splunk --destination docs
+      - helm repo index docs --url https://aegershman.github.io/splunk-helm-chart/
