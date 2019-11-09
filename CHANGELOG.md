@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.18.0]
+
+* experimenting with ability to monitor forwarders
+
 ## [0.17.0]
 
 * add `mgmt` (`svc`) port, `8089` by default
