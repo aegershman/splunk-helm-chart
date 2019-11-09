@@ -22,3 +22,12 @@ releases:
     force: false
     values:
       - config/splunk/values.yml
+
+  - name: splunk-forwarders
+    namespace: splunk-forwarders
+    chart: ../splunk
+    installed: true
+    recreatePods: true
+    force: false
+    values:
+      - config/splunk-forwarders/values.yml

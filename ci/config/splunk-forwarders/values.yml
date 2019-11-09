@@ -14,6 +14,7 @@ splunk:
   defaultYml:
     splunk:
       # role: splunk_standalone
+      deployment_server: xyz
 
       ## turn off splunk HEC's SSL requirement since
       ## we're doing TLS termination at the ingress
