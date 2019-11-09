@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.17.0]
+
+* experimenting with distributed
+
 ## [0.16.1]
 
 * cuts an actual release
