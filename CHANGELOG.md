@@ -6,6 +6,7 @@ This is a crummy changelog. Sue me.
 
 * add `mgmt` (`svc`) port, `8089` by default
 * this is referred to as `svcPort` so I guess I should use that naming
+* in ci test rename `splunk` deployment to `splunk-forwarders`
 
 ## [0.16.1]
 
