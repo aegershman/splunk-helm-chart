@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.17.0]
+
+* add `mgmt` port, `8089` by default
+
 ## [0.16.1]
 
 * cuts an actual release
