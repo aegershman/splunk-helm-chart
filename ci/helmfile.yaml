@@ -18,7 +18,7 @@ releases:
     namespace: splunk-dmc
     chart: ../splunk
     installed: true
-    recreatePods: true
+    recreatePods: false
     force: false
     values:
       - config/splunk-dmc/values.yml

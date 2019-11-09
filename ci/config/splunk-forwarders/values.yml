@@ -13,6 +13,8 @@ revisionHistoryLimit: 2
 splunk:
   defaultYml:
     splunk:
+      deployment_server: splunk-dmc.splunk-dmc.svc.cluster.local
+
       ## turn off splunk HEC's SSL requirement since
       ## we're doing TLS termination at the ingress
       hec_enableSSL: 0

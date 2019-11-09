@@ -13,6 +13,7 @@ ingress:
 splunk:
   defaultYml:
     splunk:
+      role: splunk_deployer
       ## uuidgen
       ## we could also throw this in the secrets.yml
       password: e9f630105cd740e3b0d81439ef821973
