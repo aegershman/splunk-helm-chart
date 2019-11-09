@@ -7,6 +7,7 @@ This is a crummy changelog. Sue me.
 * experimenting with ability to monitor forwarders
 * add ci test `splunk-dmc`, a.k.a. "distributed monitoring console"
 * taskfile for logs for dmc and forwarders
+* taskfile switch around name placement of `logs`
 
 ## [0.17.0]
 
