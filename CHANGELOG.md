@@ -8,6 +8,7 @@ This is a crummy changelog. Sue me.
 * this is referred to as `svcPort` so I guess I should use that naming
 * in ci test rename `splunk` deployment to `splunk-forwarders`
 * add ci test `nginx-ingress` tcp proxy for `8089`
+* add taskfile `splunk-logs` & `nginx-logs`
 
 ## [0.16.1]
 
