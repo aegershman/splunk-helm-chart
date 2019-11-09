@@ -3,11 +3,20 @@ entries:
   splunk:
   - apiVersion: v1
     appVersion: 8.0.0
-    created: "2019-11-01T13:11:34.393524-05:00"
+    created: "2019-11-09T15:51:30.626869-06:00"
+    description: splunk, but intended for use as an HTTP endpoint collector (HEC)
+    digest: aafb0ec5529ffa3a2a6dbc9f22d288c411965695abb6cc3f29183705124ee2d3
+    name: splunk
+    urls:
+    - https://aegershman.github.io/splunk-helm-chart/splunk-0.17.0.tgz
+    version: 0.17.0
+  - apiVersion: v1
+    appVersion: 8.0.0
+    created: "2019-11-09T15:51:30.626396-06:00"
     description: splunk, but intended for use as an HTTP endpoint collector (HEC)
     digest: c4eb068f2a0becbc7c247c87e6d3475ca0516cbad4c2965096035c5e0c7d01d6
     name: splunk
     urls:
     - https://aegershman.github.io/splunk-helm-chart/splunk-0.16.1.tgz
     version: 0.16.1
-generated: "2019-11-01T13:11:34.393037-05:00"
+generated: "2019-11-09T15:51:30.625305-06:00"
