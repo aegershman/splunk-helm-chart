@@ -16,6 +16,14 @@ tasks:
       - kind delete cluster
       - docker system prune --all --volumes --force
 
+  splunk-logs:
+    cmds:
+      - kubectl -n splunk-forwarders logs -f -lapp.kubernetes.io/instance=splunk-forwarders
+
+  nginx-logs:
+    cmds:
+      - kubectl -n nginx-ingress logs -f -lapp=nginx-ingress
+
   forward:
     cmds:
       - kubectl -n nginx-ingress port-forward svc/nginx-ingress-controller 8080:80 4443:443
@@ -32,7 +40,7 @@ tasks:
 
   test:
     cmds:
-      - helm test splunk --cleanup --logs
+      - helm test splunk-forwarders --cleanup --logs
 
   release:
     cmds:

@@ -41,6 +41,8 @@ spec:
               containerPort: {{ .Values.service.s2sBindPort }}
             - name: hec
               containerPort: {{ .Values.service.hecBindPort }}
+            - name: svc
+              containerPort: {{ .Values.service.svcBindPort }}
             - name: syslog
               containerPort: {{ .Values.service.syslogBindPort }}
           resources:

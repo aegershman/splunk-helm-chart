@@ -11,5 +11,6 @@ defaultBackend:
   enabled: false
 
 tcp:
-  9997: "splunk/splunk:9997"
-  5514: "splunk/splunk:5514"
+  8089: "splunk-forwarders/splunk-forwarders:8089"
+  9997: "splunk-forwarders/splunk-forwarders:9997"
+  5514: "splunk-forwarders/splunk-forwarders:5514"

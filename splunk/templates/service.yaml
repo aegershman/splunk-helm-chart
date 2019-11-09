@@ -20,6 +20,9 @@ spec:
     - port: {{ .Values.service.hecBindPort }}
       targetPort: hec
       name: hec
+    - port: {{ .Values.service.svcBindPort }}
+      targetPort: svc
+      name: svc
     - port: {{ .Values.service.syslogBindPort }}
       targetPort: syslog
       name: syslog

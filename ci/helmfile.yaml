@@ -14,11 +14,11 @@ releases:
     values:
       - config/nginx-ingress/values.yml
 
-  - name: splunk
-    namespace: splunk
+  - name: splunk-forwarders
+    namespace: splunk-forwarders
     chart: ../splunk
     installed: true
     recreatePods: true
     force: false
     values:
-      - config/splunk/values.yml
+      - config/splunk-forwarders/values.yml
