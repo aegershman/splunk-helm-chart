@@ -5,6 +5,7 @@ This is a crummy changelog. Sue me.
 ## [0.18.0]
 
 * experimenting with ability to monitor forwarders
+* add ci test `splunk-dmc`, a.k.a. "distributed monitoring console"
 
 ## [0.17.0]
 
