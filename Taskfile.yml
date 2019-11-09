@@ -40,7 +40,7 @@ tasks:
 
   test:
     cmds:
-      - helm test splunk --cleanup --logs
+      - helm test splunk-forwarders --cleanup --logs
 
   release:
     cmds:
