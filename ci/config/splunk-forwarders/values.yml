@@ -2,13 +2,13 @@ replicaCount: 1
 
 revisionHistoryLimit: 2
 
-ingress:
-  enabled: true
-  hosts:
-    - splunk.127.0.0.1.xip.io
-  tls:
-    - hosts:
-        - splunk.127.0.0.1.xip.io
+# ingress:
+#   enabled: true
+#   hosts:
+#     - splunk.127.0.0.1.xip.io
+#   tls:
+#     - hosts:
+#         - splunk.127.0.0.1.xip.io
 
 splunk:
   defaultYml:

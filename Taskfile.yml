@@ -16,9 +16,13 @@ tasks:
       - kind delete cluster
       - docker system prune --all --volumes --force
 
-  splunk-logs:
+  forwarder-logs:
     cmds:
       - kubectl -n splunk-forwarders logs -f -lapp.kubernetes.io/instance=splunk-forwarders
+
+  dmc-logs:
+    cmds:
+      - kubectl -n splunk-dmc logs -f -lapp.kubernetes.io/instance=splunk-dmc
 
   nginx-logs:
     cmds:
