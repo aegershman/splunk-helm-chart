@@ -53,6 +53,8 @@ spec:
           env:
             - name: SPLUNK_START_ARGS
               value: --accept-license
+            - name: DEBUG
+              value: {{ .Values.splunk.debug }}
       volumes:
         - name: splunk-defaults
           configMap:

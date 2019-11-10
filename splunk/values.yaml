@@ -143,6 +143,11 @@ revisionHistoryLimit: 10
 splunk:
 
   ##
+  ## Print Ansible vars to stdout (supports Docker logging)
+  ##
+  debug: false
+
+  ##
   ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
   ##
   defaultYml:
