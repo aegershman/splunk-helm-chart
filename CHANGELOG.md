@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.17.2]
+
+* support pulling apps from splunkbase
+* update ci example to pull syslog from splunkbase
+
 ## [0.17.1]
 
 * add `debug` option tying into splunk-ansible vars
