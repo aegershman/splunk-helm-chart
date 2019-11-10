@@ -2,6 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.17.1]
+
+* add `debug` option tying into splunk-ansible vars
+* specify `debug` in ci test
+
 ## [0.17.0]
 
 * add `mgmt` (`svc`) port, `8089` by default

@@ -11,6 +11,8 @@ ingress:
         - splunk.127.0.0.1.xip.io
 
 splunk:
+  debug: true
+
   defaultYml:
     splunk:
       ## turn off splunk HEC's SSL requirement since
