@@ -5,7 +5,8 @@ This is a crummy changelog. Sue me.
 ## [0.17.2]
 
 * support pulling apps from splunkbase
-* update ci example to pull syslog from splunkbase
+* update ci example to pull syslog app from splunkbase
+* has not been tested for storing apps locally in tgz format
 
 ## [0.17.1]
 
