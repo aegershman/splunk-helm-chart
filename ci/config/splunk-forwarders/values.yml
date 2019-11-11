@@ -17,8 +17,8 @@ splunk:
     splunk:
       ## pull down syslog app
       ## directly from splunkbase
-      apps_location:
-        - https://splunkbase.splunk.com/app/978/release/1.1/download
+      # apps_location:
+      #   - https://splunkbase.splunk.com/app/978/release/1.1/download
 
       ## turn off splunk HEC's SSL requirement since
       ## we're doing TLS termination at the ingress
