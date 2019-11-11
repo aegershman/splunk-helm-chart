@@ -16,6 +16,8 @@ helm repo index docs --url https://aegershman.github.io/splunk-helm-chart/
 
 Currently this forces on `rfc5424-syslog` app in `splunk-apps/` folder. I'd like to figure out a better, more dyanmic way of including user-provided app `tgz`s.
 
+[+1 thanks to `rfc5424-syslog` built by David Millis](https://splunkbase.splunk.com/app/978/) and their use of [ccBY3.0 license](https://creativecommons.org/licenses/by/3.0/)
+
 Until then, if you'd like to use both the included `rfc5424-syslog` app and apps directly from `splunkbase`, your `values.yml` will end up overriding the default `apps_locations`, so you'll need to include `"/tmp/apps/rfc5424-syslog_11.tgz"`. Your values will look something like this:
 
 ```yml
