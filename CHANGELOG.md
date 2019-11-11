@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.17.3]
+
+* support local apps from a `tgz` in configMap format
+
 ## [0.17.2]
 
 * support pulling apps from splunkbase
