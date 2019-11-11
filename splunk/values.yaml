@@ -180,6 +180,7 @@ splunk:
       license_master_included: false
       ## TODO
       ## should eventually be able to have user-provided apps
+      ## https://stackoverflow.com/questions/51843992/embeding-conf-files-into-helm-chart
       apps_location:
         - "/tmp/apps/rfc5424-syslog_11.tgz"
       license_uri: null
