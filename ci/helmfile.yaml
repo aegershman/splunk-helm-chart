@@ -22,5 +22,3 @@ releases:
     force: false
     values:
       - config/splunk-forwarders/values.yml
-    # secrets:
-    #   - config/splunk-forwarders/secrets.yaml

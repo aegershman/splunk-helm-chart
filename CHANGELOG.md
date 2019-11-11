@@ -4,8 +4,8 @@ This is a crummy changelog. Sue me.
 
 ## [0.18.0]
 
-* support local apps from a `tgz` in configMap format
-* ... and by that I mean, just the syslog configmap
+* support local apps from a `tgz` in configMap format... and by that I mean, just the syslog configmap
+* so basically it _only_ supports the `syslog5424` app in `splunk-apps/` folder, and its forced on. Until I can figure out best solution for including it with passing a relative `Files.glob(*)` string so users could pass it & have it be converted into a configmap
 * minor formatting in values.yml
 
 ## [0.17.2]

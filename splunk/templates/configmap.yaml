@@ -21,6 +21,6 @@ metadata:
 {{ include "splunk.labels" . | indent 4 }}
 binaryData:
 {{- $root := . }}
-{{- range $path, $bytes := .Files.Glob "splunk-apps/rfc5424*.tgz" }}
+{{- range $path, $bytes := .Files.Glob "splunk-apps/*.tgz" }}
   {{ base $path }}: {{ $root.Files.Get $path | b64enc | quote }}
 {{- end }}
