@@ -90,9 +90,9 @@ ingress:
   ##
   hec:
     paths:
-    - /services/collector
-    - /services/collector/event
-    - /services/collector/raw
+      - /services/collector
+      - /services/collector/event
+      - /services/collector/raw
 
 ##
 ## Strategy for deployment updates
@@ -141,7 +141,6 @@ affinity: # {}
 revisionHistoryLimit: 10
 
 splunk:
-
   ##
   ## Print Ansible vars to stdout (supports Docker logging)
   ##
@@ -179,7 +178,11 @@ splunk:
       build_location: /tmp/splunk.tgz
       build_remote_src: true
       license_master_included: false
-      apps_location: null
+      ## TODO
+      ## should eventually be able to have user-provided apps
+      ## https://stackoverflow.com/questions/51843992/embeding-conf-files-into-helm-chart
+      apps_location:
+        - "/tmp/apps/rfc5424-syslog_11.tgz"
       license_uri: null
       admin_user: admin
       app_paths:

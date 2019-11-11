@@ -2,6 +2,14 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.18.0]
+
+* support local apps from a `tgz` in configMap format... and by that I mean, just the syslog configmap
+* so basically it _only_ supports the `syslog5424` app in `splunk-apps/` folder, and its forced on. Until I can figure out best solution for including it with passing a relative `Files.glob(*)` string so users could pass it & have it be converted into a configmap
+* [+1 thanks to `rfc5424-syslog` built by David Millis](https://splunkbase.splunk.com/app/978/) and their use of [ccBY3.0 license](https://creativecommons.org/licenses/by/3.0/)
+* include ci local example of pulling directly from `splunkbase`
+* minor formatting in values.yml
+
 ## [0.17.2]
 
 * support pulling apps from splunkbase

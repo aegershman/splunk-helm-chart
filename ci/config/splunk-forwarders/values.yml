@@ -15,10 +15,10 @@ splunk:
 
   defaultYml:
     splunk:
-      ## pull down syslog app
-      ## directly from splunkbase
+      ## pull down an example app directly from splunkbase
       apps_location:
-        - https://splunkbase.splunk.com/app/978/release/1.1/download
+        - https://splunkbase.splunk.com/app/3743/release/5.12.271/download
+        - "/tmp/apps/rfc5424-syslog_11.tgz"
 
       ## turn off splunk HEC's SSL requirement since
       ## we're doing TLS termination at the ingress
