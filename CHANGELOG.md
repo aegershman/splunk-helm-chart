@@ -2,9 +2,11 @@
 
 This is a crummy changelog. Sue me.
 
-## [0.17.3]
+## [0.18.0]
 
 * support local apps from a `tgz` in configMap format
+* ... and by that I mean, just the syslog configmap
+* minor formatting in values.yml
 
 ## [0.17.2]
 
