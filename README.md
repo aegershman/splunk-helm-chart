@@ -1,6 +1,16 @@
 # splunk-helm-chart
 
-Primarily designed for use as a stateless [`HTTP Event Collector (HEC)`](https://docs.splunk.com/Documentation/Splunk/latest/Data/UsetheHTTPEventCollector)
+releasing
+
+```sh
+# Create a *.tgz of the helm chart, place it in the /docs folder
+helm package splunk --destination docs
+
+# Rebuild the `index.yml` to include the newly-created *.tgz
+helm repo index docs --url https://aegershman.github.io/splunk-helm-chart/
+
+# git add, git commit, git push, etc.
+```
 
 ## `splunk-apps/`
 

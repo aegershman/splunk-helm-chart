@@ -45,4 +45,4 @@ tasks:
   release:
     cmds:
       - helm package splunk --destination docs
-      - helm repo index docs --url https://gwx-oss.github.io/splunk-helm-chart/
+      - helm repo index docs --url https://aegershman.github.io/splunk-helm-chart/
