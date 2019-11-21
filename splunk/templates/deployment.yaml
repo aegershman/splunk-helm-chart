@@ -57,6 +57,9 @@ spec:
               value: --accept-license
             - name: SPLUNK_DEPLOYMENT_SERVER
               value: {{ .Values.splunk.deploymentServer | quote }}
+              # TODO
+            - name: SPLUNK_HEAVY_FORWARDER_URL
+              value: {{ .Values.splunk.heavyForwarderUrl | quote }}
             ## TODO is this necessary...?
             - name: SPLUNK_ROLE
               value: {{ .Values.splunk.defaultYml.splunk.role | quote }}

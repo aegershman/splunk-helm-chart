@@ -159,6 +159,11 @@ splunk:
   deploymentServer:
 
   ##
+  ## todo
+  ##
+  heavyForwarderUrl:
+
+  ##
   ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
   ##
   defaultYml:

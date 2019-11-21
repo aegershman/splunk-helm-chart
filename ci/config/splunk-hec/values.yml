@@ -15,6 +15,7 @@ splunk:
   debug: true
 
   deploymentServer: splunk-deployment-server.splunk.svc.cluster.local
+  heavyForwarderUrl: splunk-hec.splunk.svc.cluster.local
 
   defaultYml:
     splunk:
