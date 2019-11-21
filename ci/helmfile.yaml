@@ -7,7 +7,7 @@ repositories:
 
 releases:
   - name: nginx-ingress
-    namespace: nginx-ingress
+    namespace: splunk
     chart: stable/nginx-ingress
     installed: true
     version: ~1.x.x
@@ -15,10 +15,9 @@ releases:
       - config/nginx-ingress/values.yml
 
   - name: splunk-forwarders
-    namespace: splunk-forwarders
+    namespace: splunk
     chart: ../splunk
     installed: true
-    force: false
     values:
       - config/splunk-forwarders/values.yml
     secrets:
