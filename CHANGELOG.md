@@ -6,6 +6,7 @@ This is a crummy changelog. Sue me.
 
 * experiment with leveraging deployment server
 * separate helmfile deployments
+* configure role in deployment as envvar... which it probably shouldn't have to?
 
 ## [0.19.0]
 
