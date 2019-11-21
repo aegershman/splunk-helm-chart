@@ -12,6 +12,10 @@ tasks:
       - kind delete cluster
       - docker system prune --all --volumes --force
 
+  export-kubeconfig:
+    cmds:
+      - kind export kubeconfig
+
   splunk-logs:
     cmds:
       - kubectl -n splunk-forwarders logs -f -lapp.kubernetes.io/instance=splunk-forwarders
