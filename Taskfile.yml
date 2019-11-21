@@ -1,32 +1,31 @@
 version: "2"
 
-env:
-  KUBECONFIG:
-    sh: kind get kubeconfig-path
-
 tasks:
   create-kind:
     cmds:
       - kind create cluster --config ci/bootstrap/kind.config.yaml
-      - kubectl apply -f ci/bootstrap/rbac.tiller.yml
-      - helm init --service-account tiller
+      - kubectl create ns splunk
 
   delete-kind:
     cmds:
       - kind delete cluster
       - docker system prune --all --volumes --force
 
-  splunk-logs:
+  export-kubeconfig:
     cmds:
-      - kubectl -n splunk-forwarders logs -f -lapp.kubernetes.io/instance=splunk-forwarders
+      - kind export kubeconfig
 
-  nginx-logs:
+  logs-splunk:
     cmds:
-      - kubectl -n nginx-ingress logs -f -lapp=nginx-ingress
+      - kubectl -n splunk logs -f -lapp.kubernetes.io/instance=splunk-forwarders
+
+  logs-nginx:
+    cmds:
+      - kubectl -n splunk logs -f -lapp=nginx-ingress
 
   forward:
     cmds:
-      - kubectl -n nginx-ingress port-forward svc/nginx-ingress-controller 8080:80 4443:443
+      - kubectl -n splunk port-forward svc/nginx-ingress-controller 8080:80 4443:443
 
   sync:
     dir: ci
@@ -40,7 +39,7 @@ tasks:
 
   test:
     cmds:
-      - helm test splunk-forwarders --cleanup --logs
+      - helm -n splunk test splunk-forwarders --logs
 
   release:
     cmds:
