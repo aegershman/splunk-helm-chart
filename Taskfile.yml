@@ -15,11 +15,11 @@ tasks:
     cmds:
       - kind export kubeconfig
 
-  splunk-logs:
+  logs-splunk:
     cmds:
       - kubectl -n splunk logs -f -lapp.kubernetes.io/instance=splunk-forwarders
 
-  nginx-logs:
+  logs-nginx:
     cmds:
       - kubectl -n splunk logs -f -lapp=nginx-ingress
 
