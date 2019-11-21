@@ -14,11 +14,18 @@ releases:
     values:
       - config/nginx-ingress/values.yml
 
-  - name: splunk-forwarders
+  - name: splunk-deployment-server
     namespace: splunk
     chart: ../splunk
     installed: true
     values:
-      - config/splunk-forwarders/values.yml
+      - config/splunk-deployment-server/values.yml
     secrets:
-      - config/splunk-forwarders/secrets.yaml
+      - config/splunk-deployment-server/secrets.yaml
+
+  - name: splunk-hec
+    namespace: splunk
+    chart: ../splunk
+    installed: true
+    values:
+      - config/splunk-hec/values.yml

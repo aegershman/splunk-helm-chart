@@ -6,20 +6,20 @@ ingress:
     nginx.ingress.kubernetes.io/affinity: cookie
     nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
-    - splunk.127.0.0.1.xip.io
+    - hec.splunk.127.0.0.1.xip.io
   tls:
     - hosts:
-        - splunk.127.0.0.1.xip.io
+        - hec.splunk.127.0.0.1.xip.io
 
 splunk:
   debug: true
 
   defaultYml:
     splunk:
-      ## pull down an example app directly from splunkbase
-      apps_location:
-        - https://splunkbase.splunk.com/app/3743/release/5.12.271/download
-        - "/tmp/apps/rfc5424-syslog_11.tgz"
+      role: splunk_heavy_forwarder
+
+      # apps_location:
+      #   - "/tmp/apps/rfc5424-syslog_11.tgz"
 
       ## turn off splunk HEC's SSL requirement since
       ## we're doing TLS termination at the ingress

@@ -1,0 +1,28 @@
+replicaCount: 1
+
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - splunk.127.0.0.1.xip.io
+  tls:
+    - hosts:
+        - splunk.127.0.0.1.xip.io
+
+splunk:
+  debug: true
+
+  defaultYml:
+    splunk:
+      role: splunk_deployment_server
+
+      ## pull down an example app directly from splunkbase
+      apps_location:
+        - https://splunkbase.splunk.com/app/3743/release/5.12.271/download
+        - "/tmp/apps/rfc5424-syslog_11.tgz"
+
+      ## uuidgen
+      ## we could also throw this in the secrets.yml
+      password: e9f630105cd740e3b0d81439ef821973
