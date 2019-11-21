@@ -5,6 +5,7 @@ This is a crummy changelog. Sue me.
 ## [0.19.0]
 
 * revision limit default to `2`
+* set image to `7.3.3` since changes seem to come faster than `8`?
 
 ## [0.18.0]
 
