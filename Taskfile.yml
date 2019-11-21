@@ -39,7 +39,7 @@ tasks:
 
   test:
     cmds:
-      - helm -n splunk test splunk-forwarders --cleanup --logs
+      - helm -n splunk test splunk-forwarders --logs
 
   release:
     cmds:
