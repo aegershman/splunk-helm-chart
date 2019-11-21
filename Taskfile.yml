@@ -17,7 +17,7 @@ tasks:
 
   logs-splunk:
     cmds:
-      - kubectl -n splunk logs -f -lapp.kubernetes.io/instance=splunk-forwarders
+      - kubectl -n splunk logs -f -lapp.kubernetes.io/instance=splunk-hec -lapp.kubernetes.io/instance=splunk-deployment-server
 
   logs-nginx:
     cmds:
@@ -39,7 +39,7 @@ tasks:
 
   test:
     cmds:
-      - helm -n splunk test splunk-forwarders --logs
+      - helm -n splunk test splunk-hec --logs
 
   release:
     cmds:

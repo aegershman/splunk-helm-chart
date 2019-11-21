@@ -5,6 +5,7 @@ This is a crummy changelog. Sue me.
 ## [0.20.0]
 
 * experiment with leveraging deployment server
+* separate helmfile deployments
 
 ## [0.19.0]
 
