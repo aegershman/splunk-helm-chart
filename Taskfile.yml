@@ -1,9 +1,5 @@
 version: "2"
 
-env:
-  KUBECONFIG:
-    sh: kind get kubeconfig-path
-
 tasks:
   create-kind:
     cmds:
