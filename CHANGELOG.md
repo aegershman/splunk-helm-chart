@@ -7,6 +7,7 @@ This is a crummy changelog. Sue me.
 * revision limit default to `2`
 * set image to `7.3.3` since changes seem to come faster than `8`?
 * leverage `apps_urls` from splunkDefaults rather than doing a `join` on env vars
+* add some ingress annotations that I yanked from splunk-operator example
 
 ## [0.18.0]
 
