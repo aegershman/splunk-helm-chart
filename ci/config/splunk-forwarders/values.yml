@@ -1,7 +1,5 @@
 replicaCount: 1
 
-revisionHistoryLimit: 2
-
 ingress:
   enabled: true
   hosts:

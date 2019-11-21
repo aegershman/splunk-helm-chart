@@ -138,7 +138,7 @@ affinity: # {}
 ## Prevents a ton of replicasets from sticking
 ## around forever
 ##
-revisionHistoryLimit: 10
+revisionHistoryLimit: 2
 
 splunk:
   ##

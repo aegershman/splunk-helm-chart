@@ -2,6 +2,10 @@
 
 This is a crummy changelog. Sue me.
 
+## [0.19.0]
+
+* revision limit default to `2`
+
 ## [0.18.0]
 
 * support local apps from a `tgz` in configMap format... and by that I mean, just the syslog configmap
