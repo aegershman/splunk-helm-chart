@@ -149,6 +149,16 @@ splunk:
   debug: false
 
   ##
+  ## One Splunk host (network alias) that we use as a deployment server
+  ## https://github.com/splunk/splunk-ansible/blob/develop/docs/ADVANCED.md
+  ## https://github.com/splunk/docker-splunk/blob/develop/test_scenarios/kubernetes/3idx1sh1cm/splunk-master-deploy-emptydir.yaml
+  ##
+  ## example:
+  ## indexer.splunk.svc.cluster.local
+  ##
+  deploymentServer:
+
+  ##
   ## https://github.com/splunk/splunk-ansible/blob/develop/docs/advanced/default.yml.spec.md#example
   ##
   defaultYml:
