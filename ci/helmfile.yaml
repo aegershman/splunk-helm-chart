@@ -18,7 +18,6 @@ releases:
     namespace: splunk-forwarders
     chart: ../splunk
     installed: true
-    recreatePods: true
     force: false
     values:
       - config/splunk-forwarders/values.yml
