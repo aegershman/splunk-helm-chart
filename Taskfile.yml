@@ -4,8 +4,6 @@ tasks:
   create-kind:
     cmds:
       - kind create cluster --config ci/bootstrap/kind.config.yaml
-      - kubectl apply -f ci/bootstrap/rbac.tiller.yml
-      - helm init --service-account tiller
 
   delete-kind:
     cmds:
