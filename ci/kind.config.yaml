@@ -1,7 +1,24 @@
 ---
 # https://github.com/kubernetes-sigs/kind/tree/master/pkg/internal/apis/config/encoding/testdata
+# https://github.com/kubernetes-sigs/kind/pull/637
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
   - role: control-plane
+    extraPortMappings:
+      # http
+      - containerPort: 32080
+        hostPort: 32080
+      # https
+      - containerPort: 32443
+        hostPort: 32443
+      # splunk
+      - containerPort: 8089
+        hostPort: 8089
+      # splunk
+      - containerPort: 9997
+        hostPort: 9997
+      # splunk
+      - containerPort: 5514
+        hostPort: 5514
   - role: worker

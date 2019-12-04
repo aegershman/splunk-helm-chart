@@ -3,9 +3,9 @@ controller:
   hostNetwork: true
   service:
     type: NodePort
-    ## deactivate to save some ports
-    enableHttp: true
-    enableHttps: true
+    nodePorts:
+      http: 32080
+      https: 32443
 
 defaultBackend:
   enabled: false
