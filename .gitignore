@@ -1,7 +1,8 @@
+.DS_Store
 *.project
-*.DS_Store
 credentials.yml
-scratchpad/
+scratchpad
+dist
 helm
 *.iml
 .idea/**
