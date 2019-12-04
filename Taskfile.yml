@@ -1,19 +1,15 @@
 version: "2"
 
 tasks:
-  create-kind:
+  kind-create:
     cmds:
-      - kind create cluster --config ci/bootstrap/kind.config.yaml
-      - kubectl create ns splunk
+      - kind create cluster --config ci/kind.config.yaml --image kindest/node:v1.15.6
+      # - kubectl create ns splunk
 
-  delete-kind:
+  kind-delete:
     cmds:
       - kind delete cluster
-      - docker system prune --all --volumes --force
-
-  export-kubeconfig:
-    cmds:
-      - kind export kubeconfig
+      # - docker system prune --all --volumes
 
   logs-splunk:
     cmds:
@@ -31,11 +27,6 @@ tasks:
     dir: ci
     cmds:
       - helmfile sync
-
-  template:
-    dir: ci
-    cmds:
-      - helmfile template
 
   test:
     cmds:
