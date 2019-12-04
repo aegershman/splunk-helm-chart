@@ -1,6 +1,8 @@
 controller:
   replicaCount: 1
+  # https://github.com/helm/charts/blob/master/stable/nginx-ingress/values.yaml#L28-L36
   hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
   service:
     type: NodePort
     nodePorts:
